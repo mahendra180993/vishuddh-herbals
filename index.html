@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imgs/vh-l.png" type="image/x-icon">
+    <title>Vishuddh Herbals - Home</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="flex flex-col min-h-screen font-sans">
+
+    <!-- Top Navbar -->
+    <div class="bg-gray-100 text-gray-700 text-sm py-2 px-6 hidden sm:flex items-center">
+        <div class="max-w-6xl mx-auto w-full flex justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center gap-1"><i class="fas fa-envelope"></i><span>info@example.com</span></div>
+                <div class="flex items-center gap-1"><i class="fas fa-phone"></i><span>+91 1234567890</span></div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navbar -->
+    <nav id="navbar" class="absolute w-full lg:mt-9 top-0 left-0 z-30 transition-all duration-300">
+        <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
+            <div>
+                <img src="imgs/vh-w.png" alt="Logo" class="h-10">
+            </div>
+            <ul id="nav-links" class="hidden md:flex space-x-8 font-semibold text-white">
+                <li><a href="index.html" class="hover:text-olive-green">Home</a></li>
+                <li><a href="templates/about.html" class="hover:text-olive-green">About Us</a></li>
+                <li><a href="templates/products.html" class="hover:text-olive-green">Products</a></li>
+                <li><a href="templates/reviews.html" class="hover:text-olive-green">Reviews</a></li>
+                <li><a href="templates/faq.html" class="hover:text-olive-green">FAQ's</a></li>
+            </ul>
+            <div class="flex items-center">
+                <a href="templates/contact.html" class="hidden md:inline-block olive-green text-gray-700 px-4 py-2 rounded olive-green-hover transition">Contact</a>
+                <button id="menu-toggle" class="md:hidden text-white text-2xl ml-4 focus:outline-none"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <ul id="mobile-menu" class="hidden flex-col items-center bg-black bg-opacity-90 text-center text-white font-semibold space-y-4 py-6 md:hidden">
+            <li><a href="index.html" class="hover:text-olive-green border-b-2 border-white">Home</a></li>
+            <li><a href="templates/about.html" class="border-b-2 border-white hover:text-olive-green">About Us</a></li>
+            <li><a href="templates/products.html" class="border-b-2 border-white hover:text-olive-green">Products</a></li>
+            <li><a href="templates/reviews.html" class="border-b-2 border-white hover:text-olive-green">Reviews</a></li>
+            <li><a href="templates/faq.html" class="border-b-2 border-white hover:text-olive-green">FAQ's</a></li>
+            <li><a href="templates/contact.html" class="olive-green px-4 py-2 rounded olive-green-hover transition">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen bg-cover bg-center" style="background-image: url('imgs/banner-5.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center px-4">
+            <h1 class="text-white text-4xl md:text-6xl font-bold mb-4">Welcome to Our Website</h1>
+            <p class="text-gray-300 text-lg md:text-2xl mb-6">Discover our products and services</p>
+            <a href="templates/contact.html" class="olive-green text-gray-700 px-6 py-3 rounded olive-green-hover transition text-lg">Get Started</a>
+        </div>
+    </section>
+<!-- ✅ Section 1: About Our Herbal Brand -->
+<section class="py-16 bg-green-50">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
+    <img src="/imgs/banner-4.jpg" alt="About Herbal" class="rounded-2xl shadow-lg">
+    <div>
+      <h2 class="text-3xl font-bold text-green-700 mb-4">Natural Wellness, Redefined</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        At <span class="font-semibold text-green-600">AyurVeda Naturals</span>, we craft herbal products inspired by ancient traditions and supported by modern science. Our ingredients are sustainably sourced, ensuring purity, potency, and harmony with nature.
+      </p>
+      <a href="templates/products.html" class="inline-block bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition">Explore Our Products</a>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ Section 2: Featured Herbal Products -->
+<section id="products" class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-green-700 mb-10">Our Popular Herbal Products</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-6 bg-green-50 rounded-xl shadow hover:shadow-lg transition">
+        <img src="/imgs/ginseng.jpg" alt="Ginseng" class="rounded-full w-32 h-32 mx-auto mb-4 object-cover">
+        <h3 class="font-semibold text-green-700">Ginseng</h3>
+        <p class="text-gray-600 text-sm mt-2">Boosts vitality, promotes glowing skin, and balances body energy naturally.</p>
+      </div>
+      <div class="p-6 bg-green-50 rounded-xl shadow hover:shadow-lg transition">
+        <img src="/imgs/usiri.jpg" alt="Usiri" class="rounded-full w-32 h-32 mx-auto mb-4 object-cover">
+        <h3 class="font-semibold text-green-700">Usiri (Amla)</h3>
+        <p class="text-gray-600 text-sm mt-2">Rich in Vitamin C, helps rejuvenate the skin and strengthens immunity.</p>
+      </div>
+      <div class="p-6 bg-green-50 rounded-xl shadow hover:shadow-lg transition">
+        <img src="/imgs/Tulsi.jpeg" alt="Tulsi" class="rounded-full w-32 h-32 mx-auto mb-4 object-cover">
+        <h3 class="font-semibold text-green-700">Tulsi</h3>
+        <p class="text-gray-600 text-sm mt-2">Purifies the body, calms the mind, and promotes healthy respiration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ Section 3: Why Choose Us -->
+<section class="py-16 bg-green-100">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-green-700 mb-10">Why Choose Our Herbal Products?</h2>
+    <div class="grid md:grid-cols-4 gap-8">
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <i class="fas fa-leaf text-green-600 text-3xl mb-3"></i>
+        <h3 class="font-semibold text-green-700">100% Natural</h3>
+        <p class="text-sm text-gray-600 mt-2">We use only pure herbs, no artificial additives or chemicals.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <i class="fas fa-flask text-green-600 text-3xl mb-3"></i>
+        <h3 class="font-semibold text-green-700">Clinically Tested</h3>
+        <p class="text-sm text-gray-600 mt-2">All our formulations are backed by scientific validation.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <i class="fas fa-seedling text-green-600 text-3xl mb-3"></i>
+        <h3 class="font-semibold text-green-700">Eco-Friendly</h3>
+        <p class="text-sm text-gray-600 mt-2">Sustainably sourced ingredients with zero waste packaging.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+        <i class="fas fa-heart text-green-600 text-3xl mb-3"></i>
+        <h3 class="font-semibold text-green-700">Customer Trust</h3>
+        <p class="text-sm text-gray-600 mt-2">Trusted by thousands for quality and authenticity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ Section 4: Customer Reviews -->
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-green-700 mb-10">What Our Customers Say</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="p-6 bg-green-50 rounded-xl shadow-md">
+        <img src="/imgs/user.png" alt="user" class="w-16 h-16 rounded-full mx-auto mb-3 object-cover">
+        <p class="text-gray-600 italic">“The herbal face pack gave me glowing skin within days. So natural and refreshing!”</p>
+        <h4 class="mt-3 font-semibold text-green-700">– Priya Sharma</h4>
+      </div>
+      <div class="p-6 bg-green-50 rounded-xl shadow-md">
+        <img src="/imgs/user.png" alt="user" class="w-16 h-16 rounded-full mx-auto mb-3 object-cover">
+        <p class="text-gray-600 italic">“I love the ginseng capsules. They keep me energetic throughout the day.”</p>
+        <h4 class="mt-3 font-semibold text-green-700">– Ramesh Verma</h4>
+      </div>
+      <div class="p-6 bg-green-50 rounded-xl shadow-md">
+        <img src="/imgs/user.png" alt="user" class="w-16 h-16 rounded-full mx-auto mb-3 object-cover">
+        <p class="text-gray-600 italic">“Pure, herbal, and effective! My skin feels younger and smoother.”</p>
+        <h4 class="mt-3 font-semibold text-green-700">– Sneha Patel</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ Section 5: Contact & Inquiry -->
+<section class="py-16 bg-green-50">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-green-700 mb-8">Have Questions? Get in Touch!</h2>
+    <p class="text-gray-700 mb-6">We’d love to hear from you. Whether it’s a query about our herbal range or partnership opportunities — reach out today.</p>
+    <a href="templates/contact.html" class="inline-block bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition">
+      Contact Us
+    </a>
+  </div>
+</section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-200 py-12 px-6">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="max-w-md mx-auto md:col-span-2 text-center">
+                <img src="../imgs/vh-l.png" alt="Logo" class="mb-4 h-24 w-20 mx-auto">
+                <p class="text-gray-200">
+                    At <span class="font-semibold text-green-700">VedaHerb</span>, we believe in the healing power of nature.  
+                    Our herbal products are crafted using time-tested Ayurvedic ingredients to promote natural wellness,  
+                    nourish your body, and rejuvenate your skin and hair — the way nature intended.
+                </p>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="templates/about.html" class="hover:text-olive-green">About Us</a></li>
+                    <li><a href="templates/products.html" class="hover:text-olive-green">Products</a></li>
+                    <li><a href="templates/faq.html" class="hover:text-olive-green">FAQ's</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

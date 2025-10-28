@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Demo Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="../imgs/vh-l.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="flex flex-col min-h-screen font-sans">
+
+    <!-- Top Navbar -->
+    <div class="bg-gray-100 text-gray-700 text-sm py-2 px-6 hidden sm:flex items-center">
+        <div class="max-w-6xl mx-auto w-full flex justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center gap-1"><i class="fas fa-envelope"></i><span>info@example.com</span></div>
+                <div class="flex items-center gap-1"><i class="fas fa-phone"></i><span>+91 1234567890</span></div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navbar -->
+    <nav id="navbar" class="absolute w-full lg:mt-9 top-0 left-0 z-30 transition-all duration-300">
+        <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
+            <div>
+                <img src="../imgs/vh-w.png" alt="Logo" class="h-10">
+            </div>
+            <ul id="nav-links" class="hidden md:flex space-x-8 font-semibold text-white">
+                <li><a href="/" class="hover:text-olive-green">Home</a></li>
+                <li><a href="about.html" class="hover:text-olive-green">About Us</a></li>
+                <li><a href="products.html" class="hover:text-olive-green">Products</a></li>
+                <li><a href="reviews.html" class="hover:text-olive-green">Reviews</a></li>
+                <li><a href="faq.html" class="hover:text-olive-green">FAQ's</a></li>
+            </ul>
+            <div class="flex items-center">
+                <a href="contact.html" class="hidden md:inline-block olive-green text-gray-700 px-4 py-2 rounded olive-green-hover transition">Contact</a>
+                <button id="menu-toggle" class="md:hidden text-white text-2xl ml-4 focus:outline-none"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <ul id="mobile-menu" class="hidden flex-col items-center bg-black bg-opacity-90 text-center text-white font-semibold space-y-4 py-6 md:hidden">
+            <li><a href="/" class="hover:text-olive-green border-b-2 border-white">Home</a></li>
+            <li><a href="about.html" class="border-b-2 border-white hover:text-olive-green">About Us</a></li>
+            <li><a href="products.html" class="border-b-2 border-white hover:text-olive-green">Products</a></li>
+            <li><a href="reviews.html" class="border-b-2 border-white hover:text-olive-green">Reviews</a></li>
+            <li><a href="faq.html" class="border-b-2 border-white hover:text-olive-green">FAQ's</a></li>
+            <li><a href="contact.html" class="olive-green px-4 py-2 rounded olive-green-hover transition">Contact</a></li>
+        </ul>
+    </nav>
+    
+<section class="relative bg-cover bg-center bg-no-repeat h-[250px] md:h-[350px]" style="background-image: url('/imgs/banner-product.jpg');">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#abd9c3]">What Our Customers Say</h2>
+        <p class="text-base md:text-lg max-w-2xl">
+        Crafted with care from natural ingredients
+        </p>
+    </div>
+</section>
+
+    <!-- 🌿 Herbal Product Reviews Section -->
+<section class="bg-gradient-to-b from-green-50 to-white py-16">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Review Card -->
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-2">
+        <div class="flex flex-col items-center">
+          <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Priya Sharma" class="w-16 h-16 rounded-full object-cover mb-3 border-2 border-green-500">
+          <p class="text-yellow-500 mb-2">★★★★★</p>
+          <p class="text-gray-700 italic text-sm">“The Herbal Shampoo made my hair soft and shiny. Love its natural fragrance!”</p>
+          <h4 class="mt-4 font-semibold text-green-700">Priya Sharma</h4>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-2">
+        <div class="flex flex-col items-center">
+          <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Rakesh Verma" class="w-16 h-16 rounded-full object-cover mb-3 border-2 border-green-500">
+          <p class="text-yellow-500 mb-2">★★★★★</p>
+          <p class="text-gray-700 italic text-sm">“The Natural Soap feels so refreshing and makes my skin glow naturally.”</p>
+          <h4 class="mt-4 font-semibold text-green-700">Rakesh Verma</h4>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-2">
+        <div class="flex flex-col items-center">
+          <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Meena Joshi" class="w-16 h-16 rounded-full object-cover mb-3 border-2 border-green-500">
+          <p class="text-yellow-500 mb-2">★★★★☆</p>
+          <p class="text-gray-700 italic text-sm">“The Neem Face Wash works amazing for acne-prone skin — visible results!”</p>
+          <h4 class="mt-4 font-semibold text-green-700">Meena Joshi</h4>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-2">
+        <div class="flex flex-col items-center">
+          <img src="https://randomuser.me/api/portraits/men/24.jpg" alt="Arjun Nair" class="w-16 h-16 rounded-full object-cover mb-3 border-2 border-green-500">
+          <p class="text-yellow-500 mb-2">★★★★★</p>
+          <p class="text-gray-700 italic text-sm">“Usiri Hair Oil gave new life to my dull hair. Non-sticky and effective.”</p>
+          <h4 class="mt-4 font-semibold text-green-700">Arjun Nair</h4>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-2">
+        <div class="flex flex-col items-center">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Kavya Iyer" class="w-16 h-16 rounded-full object-cover mb-3 border-2 border-green-500">
+          <p class="text-yellow-500 mb-2">★★★★★</p>
+          <p class="text-gray-700 italic text-sm">“Aloe Vera Gel is my daily skincare essential — so soothing and natural.”</p>
+          <h4 class="mt-4 font-semibold text-green-700">Kavya Iyer</h4>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-2">
+        <div class="flex flex-col items-center">
+          <img src="https://randomuser.me/api/portraits/men/35.jpg" alt="Harish Patel" class="w-16 h-16 rounded-full object-cover mb-3 border-2 border-green-500">
+          <p class="text-yellow-500 mb-2">★★★★☆</p>
+          <p class="text-gray-700 italic text-sm">“The Sandalwood Cream smells divine and keeps my skin moisturized.”</p>
+          <h4 class="mt-4 font-semibold text-green-700">Harish Patel</h4>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-2">
+        <div class="flex flex-col items-center">
+          <img src="https://randomuser.me/api/portraits/women/76.jpg" alt="Sneha Kapoor" class="w-16 h-16 rounded-full object-cover mb-3 border-2 border-green-500">
+          <p class="text-yellow-500 mb-2">★★★★★</p>
+          <p class="text-gray-700 italic text-sm">“The Rose Water Toner is so refreshing — perfect for my daily skincare.”</p>
+          <h4 class="mt-4 font-semibold text-green-700">Sneha Kapoor</h4>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-2">
+        <div class="flex flex-col items-center">
+          <img src="https://randomuser.me/api/portraits/men/47.jpg" alt="Vinod Rao" class="w-16 h-16 rounded-full object-cover mb-3 border-2 border-green-500">
+          <p class="text-yellow-500 mb-2">★★★★☆</p>
+          <p class="text-gray-700 italic text-sm">“The Herbal Toothpaste feels pure and leaves a lasting freshness.”</p>
+          <h4 class="mt-4 font-semibold text-green-700">Vinod Rao</h4>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-2">
+        <div class="flex flex-col items-center">
+          <img src="https://randomuser.me/api/portraits/women/52.jpg" alt="Anjali Das" class="w-16 h-16 rounded-full object-cover mb-3 border-2 border-green-500">
+          <p class="text-yellow-500 mb-2">★★★★★</p>
+          <p class="text-gray-700 italic text-sm">“Turmeric Face Pack reduced my acne marks naturally. Highly recommended!”</p>
+          <h4 class="mt-4 font-semibold text-green-700">Anjali Das</h4>
+        </div>
+      </div>
+
+      <!-- <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-2">
+        <div class="flex flex-col items-center">
+          <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Rohit Mehra" class="w-16 h-16 rounded-full object-cover mb-3 border-2 border-green-500">
+          <p class="text-yellow-500 mb-2">★★★★★</p>
+          <p class="text-gray-700 italic text-sm">“The Ginseng Tonic gave me more energy and focus naturally — I love it!”</p>
+          <h4 class="mt-4 font-semibold text-green-700">Rohit Mehra</h4>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-200 py-12 px-6">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="max-w-md mx-auto md:col-span-2 text-center">
+                <img src="../imgs/vh-l.png" alt="Logo" class="mb-4 h-24 w-20 mx-auto">
+                <p class="text-gray-200">
+                    At <span class="font-semibold text-green-700">VedaHerb</span>, we believe in the healing power of nature.  
+                    Our herbal products are crafted using time-tested Ayurvedic ingredients to promote natural wellness,  
+                    nourish your body, and rejuvenate your skin and hair — the way nature intended.
+                </p>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="about.html" class="hover:text-olive-green">About Us</a></li>
+                    <li><a href="products.html" class="hover:text-olive-green">Products</a></li>
+                    <li><a href="faq.html" class="hover:text-olive-green">FAQ's</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

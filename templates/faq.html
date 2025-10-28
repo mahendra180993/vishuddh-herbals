@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Demo Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="../imgs/vh-l.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="flex flex-col min-h-screen font-sans">
+
+    <!-- Top Navbar -->
+    <div class="bg-gray-100 text-gray-700 text-sm py-2 px-6 hidden sm:flex items-center">
+        <div class="max-w-6xl mx-auto w-full flex justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center gap-1"><i class="fas fa-envelope"></i><span>info@example.com</span></div>
+                <div class="flex items-center gap-1"><i class="fas fa-phone"></i><span>+91 1234567890</span></div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navbar -->
+    <nav id="navbar" class="absolute w-full lg:mt-9 top-0 left-0 z-30 transition-all duration-300">
+        <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
+            <div>
+                <img src="../imgs/vh-w.png" alt="Logo" class="h-10">
+            </div>
+            <ul id="nav-links" class="hidden md:flex space-x-8 font-semibold text-white">
+                <li><a href="/" class="hover:text-olive-green">Home</a></li>
+                <li><a href="about.html" class="hover:text-olive-green">About Us</a></li>
+                <li><a href="products.html" class="hover:text-olive-green">Products</a></li>
+                <li><a href="reviews.html" class="hover:text-olive-green">Reviews</a></li>
+                <li><a href="faq.html" class="hover:text-olive-green">FAQ's</a></li>
+            </ul>
+            <div class="flex items-center">
+                <a href="contact.html" class="hidden md:inline-block olive-green text-gray-700 px-4 py-2 rounded olive-green-hover transition">Contact</a>
+                <button id="menu-toggle" class="md:hidden text-white text-2xl ml-4 focus:outline-none"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <ul id="mobile-menu" class="hidden flex-col items-center bg-black bg-opacity-90 text-center text-white font-semibold space-y-4 py-6 md:hidden">
+            <li><a href="/" class="hover:text-olive-green border-b-2 border-white">Home</a></li>
+            <li><a href="about.html" class="border-b-2 border-white hover:text-olive-green">About Us</a></li>
+            <li><a href="products.html" class="border-b-2 border-white hover:text-olive-green">Products</a></li>
+            <li><a href="reviews.html" class="border-b-2 border-white hover:text-olive-green">Reviews</a></li>
+            <li><a href="faq.html" class="border-b-2 border-white hover:text-olive-green">FAQ's</a></li>
+            <li><a href="contact.html" class="olive-green px-4 py-2 rounded olive-green-hover transition">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- FAQ Hero Section -->
+<section class="relative bg-cover bg-center bg-no-repeat h-[250px] md:h-[350px]" style="background-image: url('/imgs/faq.jpeg');">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+    <h2 class="text-3xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
+    <p class="text-base md:text-lg max-w-2xl">
+      Learn more about Vishuddh Herbals’ natural products, ingredients, and our commitment to purity.
+    </p>
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <div class="space-y-4" id="faq-container">
+
+      <!-- FAQ Items -->
+      <div class="border rounded-md">
+        <button class="w-full text-left px-4 py-3 font-semibold hover:bg-green-50 flex justify-between items-center faq-question">
+          <span>1. What makes Vishuddh Herbals products different?</span>
+          <span class="text-xl">+</span>
+        </button>
+        <div class="px-4 pb-3 hidden faq-answer">
+          All our products are made from 100% natural ingredients, free from parabens, sulfates, and synthetic fragrances. We combine traditional Ayurvedic wisdom with modern care to ensure purity and effectiveness.
+        </div>
+      </div>
+
+      <div class="border rounded-md">
+        <button class="w-full text-left px-4 py-3 font-semibold hover:bg-green-50 flex justify-between items-center faq-question">
+          <span>2. Are your soaps and shampoos suitable for all skin types?</span>
+          <span class="text-xl">+</span>
+        </button>
+        <div class="px-4 pb-3 hidden faq-answer">
+          Yes. Our natural formulations are gentle and safe for all skin and hair types, including sensitive skin. However, we recommend a patch test before first use for extra care.
+        </div>
+      </div>
+
+      <div class="border rounded-md">
+        <button class="w-full text-left px-4 py-3 font-semibold hover:bg-green-50 flex justify-between items-center faq-question">
+          <span>3. Do your products contain artificial colors or fragrances?</span>
+          <span class="text-xl">+</span>
+        </button>
+        <div class="px-4 pb-3 hidden faq-answer">
+          No. All Vishuddh Herbals products are free from artificial colors and synthetic fragrances. We use only pure essential oils and natural extracts for aroma and benefits.
+        </div>
+      </div>
+
+      <div class="border rounded-md">
+        <button class="w-full text-left px-4 py-3 font-semibold hover:bg-green-50 flex justify-between items-center faq-question">
+          <span>4. Are your ingredients ethically sourced?</span>
+          <span class="text-xl">+</span>
+        </button>
+        <div class="px-4 pb-3 hidden faq-answer">
+          Absolutely. We partner with trusted farmers and local suppliers who follow sustainable and ethical sourcing practices to preserve nature’s balance.
+        </div>
+      </div>
+
+      <div class="border rounded-md">
+        <button class="w-full text-left px-4 py-3 font-semibold hover:bg-green-50 flex justify-between items-center faq-question">
+          <span>5. Do your products contain preservatives?</span>
+          <span class="text-xl">+</span>
+        </button>
+        <div class="px-4 pb-3 hidden faq-answer">
+          We use only safe, natural preservatives when required to maintain product stability without compromising purity or effectiveness.
+        </div>
+      </div>
+
+      <div class="border rounded-md">
+        <button class="w-full text-left px-4 py-3 font-semibold hover:bg-green-50 flex justify-between items-center faq-question">
+          <span>6. Are Vishuddh Herbals products cruelty-free?</span>
+          <span class="text-xl">+</span>
+        </button>
+        <div class="px-4 pb-3 hidden faq-answer">
+          Yes! We are proudly cruelty-free. None of our products or ingredients are tested on animals at any stage of production.
+        </div>
+      </div>
+
+      <div class="border rounded-md">
+        <button class="w-full text-left px-4 py-3 font-semibold hover:bg-green-50 flex justify-between items-center faq-question">
+          <span>7. How should I store herbal soaps and shampoos?</span>
+          <span class="text-xl">+</span>
+        </button>
+        <div class="px-4 pb-3 hidden faq-answer">
+          Store in a cool, dry place away from direct sunlight. Allow soaps to dry between uses for longer shelf life and freshness.
+        </div>
+      </div>
+
+      <div class="border rounded-md">
+        <button class="w-full text-left px-4 py-3 font-semibold hover:bg-green-50 flex justify-between items-center faq-question">
+          <span>8. Can children or elderly people use your products?</span>
+          <span class="text-xl">+</span>
+        </button>
+        <div class="px-4 pb-3 hidden faq-answer">
+          Yes. Our products are mild and safe for all ages. We avoid harsh ingredients, making them ideal for children, adults, and elderly alike.
+        </div>
+      </div>
+
+      <div class="border rounded-md">
+        <button class="w-full text-left px-4 py-3 font-semibold hover:bg-green-50 flex justify-between items-center faq-question">
+          <span>9. Are your products biodegradable and eco-friendly?</span>
+          <span class="text-xl">+</span>
+        </button>
+        <div class="px-4 pb-3 hidden faq-answer">
+          Yes, we use biodegradable ingredients and recyclable packaging to ensure minimal impact on the environment.
+        </div>
+      </div>
+
+      <div class="border rounded-md">
+        <button class="w-full text-left px-4 py-3 font-semibold hover:bg-green-50 flex justify-between items-center faq-question">
+          <span>10. Where can I buy Vishuddh Herbals products?</span>
+          <span class="text-xl">+</span>
+        </button>
+        <div class="px-4 pb-3 hidden faq-answer">
+          You can purchase directly from our official website or from select herbal and organic stores across India.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-200 py-12 px-6">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="max-w-md mx-auto md:col-span-2 text-center">
+                <img src="../imgs/vh-l.png" alt="Logo" class="mb-4 h-24 w-20 mx-auto">
+                <p class="text-gray-200">
+                    At <span class="font-semibold text-green-700">VedaHerb</span>, we believe in the healing power of nature.  
+                    Our herbal products are crafted using time-tested Ayurvedic ingredients to promote natural wellness,  
+                    nourish your body, and rejuvenate your skin and hair — the way nature intended.
+                </p>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="about.html" class="hover:text-olive-green">About Us</a></li>
+                    <li><a href="products.html" class="hover:text-olive-green">Products</a></li>
+                    <li><a href="faq.html" class="hover:text-olive-green">FAQ's</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold mb-4">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Mobile menu toggle
+  const toggleBtn = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (toggleBtn && mobileMenu) {
+    toggleBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+
+  // Highlight active link
+  const path = window.location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll('#desktop-nav a, #mobile-menu a');
+
+  navLinks.forEach(link => {
+    const page = link.getAttribute('data-page');
+    if (page === path) {
+      link.querySelector('span:last-child')?.classList.add('w-full');
+      link.classList.add('text-blue-700', 'font-semibold');
+    }
+  });
+
+  // ✅ FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('span.text-xl');
+      content.classList.toggle('hidden');
+      icon.textContent = content.classList.contains('hidden') ? '+' : '–';
+    });
+  });
+
+});
+</script>
+</body>
+</html>
