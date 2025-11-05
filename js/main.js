@@ -16,13 +16,13 @@ if(navbar){
     window.addEventListener('scroll', () => {
         if(window.scrollY > 50){
             navbar.classList.remove('absolute');
-            navbar.classList.add('sticky', 'top-0', 'bg-[#549777]', 'shadow-md');
+            navbar.classList.add('sticky', 'top-0', 'bg-green-700', 'shadow-md');
             navLinks.forEach(a => {
                 if(!a.classList.contains('olive-green')) a.classList.replace('text-white','text-gray-200');
             });
         } else {
             navbar.classList.add('absolute');
-            navbar.classList.remove('sticky','top-0','bg-[#549777]','shadow-md');
+            navbar.classList.remove('sticky','top-0','bg-green-700','shadow-md');
             navLinks.forEach(a => {
                 if(!a.classList.contains('olive-green')) a.classList.replace('text-gray-200','text-white');
             });

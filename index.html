@@ -1,92 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="imgs/vh-l.png" type="image/x-icon">
-    <title>Vishuddh Herbals - Home</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="imgs/vh-l.png" type="image/x-icon" />
+  <title>Vishuddh Herbals - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ✅ Smooth fade + pan animation for hero images */
+    #hero-slider img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      transition: opacity 1s ease-in-out, transform 8s ease;
+      transform: scale(1);
+    }
+
+    #hero-slider img.active {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    #hero-slider img.inactive {
+      opacity: 0;
+      transform: scale(1);
+    }
+
+    /* Dots smoother style */
+    #dots-container button {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    #dots-container button.active {
+      background-color: white;
+      transform: scale(1.2);
+    }
+  </style>
 </head>
+
 <body class="flex flex-col min-h-screen font-sans">
-
-    <!-- Top Navbar -->
-    <div class="bg-gray-100 text-gray-700 text-sm py-2 px-6 hidden sm:flex items-center">
-        <div class="max-w-6xl mx-auto w-full flex justify-between">
-            <div class="flex items-center space-x-4">
-                <div class="flex items-center gap-1"><i class="fas fa-envelope"></i><span>info@example.com</span></div>
-                <div class="flex items-center gap-1"><i class="fas fa-phone"></i><span>+91 1234567890</span></div>
-            </div>
-            <div class="flex items-center space-x-4">
-                <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
+  <!-- ✅ TOP NAVBAR -->
+  <div class="bg-gray-100 text-gray-700 text-sm py-2 px-6 hidden sm:flex items-center">
+    <div class="max-w-6xl mx-auto w-full flex justify-between">
+      <div class="flex items-center space-x-4">
+        <div class="flex items-center gap-1"><i class="fas fa-envelope"></i><span>info@example.com</span></div>
+        <div class="flex items-center gap-1"><i class="fas fa-phone"></i><span>+91 1234567890</span></div>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
+      </div>
     </div>
-
-    <!-- Main Navbar -->
-    <nav id="navbar" class="absolute w-full lg:mt-9 top-0 left-0 z-30 transition-all duration-300">
-        <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
-            <div>
-                <img src="imgs/vh-w.png" alt="Logo" class="h-10">
-            </div>
-            <ul id="nav-links" class="hidden md:flex space-x-8 font-semibold text-white">
-                <li><a href="index.html" class="hover:text-olive-green">Home</a></li>
-                <li><a href="templates/about.html" class="hover:text-olive-green">About Us</a></li>
-                <li><a href="templates/products.html" class="hover:text-olive-green">Products</a></li>
-                <li><a href="templates/reviews.html" class="hover:text-olive-green">Reviews</a></li>
-                <li><a href="templates/faq.html" class="hover:text-olive-green">FAQ's</a></li>
-            </ul>
-            <div class="flex items-center">
-                <a href="templates/contact.html" class="hidden md:inline-block olive-green text-gray-700 px-4 py-2 rounded olive-green-hover transition">Contact</a>
-                <button id="menu-toggle" class="md:hidden text-white text-2xl ml-4 focus:outline-none"><i class="fas fa-bars"></i></button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <ul id="mobile-menu" class="hidden flex-col items-center bg-black bg-opacity-90 text-center text-white font-semibold space-y-4 py-6 md:hidden">
-            <li><a href="index.html" class="hover:text-olive-green border-b-2 border-white">Home</a></li>
-            <li><a href="templates/about.html" class="border-b-2 border-white hover:text-olive-green">About Us</a></li>
-            <li><a href="templates/products.html" class="border-b-2 border-white hover:text-olive-green">Products</a></li>
-            <li><a href="templates/reviews.html" class="border-b-2 border-white hover:text-olive-green">Reviews</a></li>
-            <li><a href="templates/faq.html" class="border-b-2 border-white hover:text-olive-green">FAQ's</a></li>
-            <li><a href="templates/contact.html" class="olive-green px-4 py-2 rounded olive-green-hover transition">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-<section class="relative h-screen bg-cover bg-center" style="background-image: url('imgs/banner-5.jpg');">
-  <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center px-4">
-    <h1 class="text-white text-4xl md:text-6xl font-bold mb-4">
-      Embrace the Power of Nature 🌿
-    </h1>
-    <p class="text-gray-200 text-lg md:text-2xl mb-6 max-w-2xl">
-      Discover 100% natural, herbal wellness products crafted to nourish your body, mind, and skin — the way nature intended.
-    </p>
-    <a href="templates/contact.html" 
-       class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg transition text-lg font-semibold">
-      Explore Now
-    </a>
   </div>
-</section>
 
-<!-- ✅ Section 1: About Our Herbal Brand -->
-<section class="py-16 bg-green-50">
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
-    <img src="/imgs/banner-4.jpg" alt="About Herbal" class="rounded-2xl shadow-lg">
+  <!-- ✅ MAIN NAVBAR -->
+  <nav id="navbar" class="fixed w-full top-0 left-0 z-30 bg-green-900 bg-opacity-40 backdrop-blur-sm transition-all duration-300">
+  <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
     <div>
-      <h2 class="text-3xl font-bold text-green-700 mb-4">Natural Wellness, Redefined</h2>
-      <p class="text-gray-700 leading-relaxed mb-4">
-        At <span class="font-semibold text-green-600">AyurVeda Naturals</span>, we craft herbal products inspired by ancient traditions and supported by modern science. Our ingredients are sustainably sourced, ensuring purity, potency, and harmony with nature.
-      </p>
-      <a href="templates/products.html" class="inline-block bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition">Explore Our Products</a>
+      <img src="imgs/vh-w.png" alt="Logo" class="h-10" />
+    </div>
+
+    <!-- Desktop Menu -->
+    <ul id="nav-links" class="hidden lg:flex space-x-8 font-semibold text-white">
+      <li><a href="index.html" class="hover:text-green-400">Home</a></li>
+      <li><a href="templates/about.html" class="hover:text-green-400">About Us</a></li>
+      <li><a href="templates/products.html" class="hover:text-green-400">Products</a></li>
+      <li><a href="templates/reviews.html" class="hover:text-green-400">Reviews</a></li>
+      <li><a href="templates/faq.html" class="hover:text-green-400">FAQ's</a></li>
+    </ul>
+
+    <!-- Contact & Menu Button -->
+    <div class="flex items-center space-x-4">
+      <a href="templates/contact.html"
+         class="hidden lg:inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded transition">
+        Contact
+      </a>
+      <button id="menu-toggle" class="block lg:hidden text-white text-2xl focus:outline-none">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </div>
-</section>
+
+  <!-- Mobile/Tablet Menu -->
+  <ul id="mobile-menu" class="hidden flex-col items-center bg-green-900 bg-opacity-90 text-white font-semibold space-y-4 py-6 lg:hidden">
+    <li><a href="index.html" class="hover:text-green-400 border-b border-white pb-1">Home</a></li>
+    <li><a href="templates/about.html" class="hover:text-green-400 border-b border-white pb-1">About Us</a></li>
+    <li><a href="templates/products.html" class="hover:text-green-400 border-b border-white pb-1">Products</a></li>
+    <li><a href="templates/reviews.html" class="hover:text-green-400 border-b border-white pb-1">Reviews</a></li>
+    <li><a href="templates/faq.html" class="hover:text-green-400 border-b border-white pb-1">FAQ's</a></li>
+    <li><a href="templates/contact.html" class="bg-green-500 px-4 py-2 rounded hover:bg-green-600 transition">Contact</a></li>
+  </ul>
+</nav>
+
+  <!-- ✅ HERO SECTION (Improved UI, same logic) -->
+  <section id="hero-slider" class="relative h-screen w-full overflow-hidden">
+    <img id="slider-image" src="imgs/b-1.jpeg" alt="Nature Banner"
+         class="absolute inset-0 w-full h-full object-cover opacity-100 active" />
+
+    <!-- Dots -->
+    <div id="dots-container"
+         class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3 z-10"></div>
+  </section>
+
 
 <!-- ✅ Section 2: Featured Herbal Products -->
 <section id="products" class="py-16 bg-white">
@@ -176,35 +202,127 @@
   </div>
 </section>
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-200 py-12 px-6">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div class="max-w-md mx-auto md:col-span-2 text-center">
-                <img src="../imgs/vh-l.png" alt="Logo" class="mb-4 h-24 w-20 mx-auto">
-                <p class="text-gray-200">
-                    At <span class="font-semibold text-green-700">VedaHerb</span>, we believe in the healing power of nature.  
-                    Our herbal products are crafted using time-tested Ayurvedic ingredients to promote natural wellness,  
-                    nourish your body, and rejuvenate your skin and hair — the way nature intended.
-                </p>
-            </div>
-            <div>
-                <h3 class="font-semibold mb-4">Quick Links</h3>
-                <ul class="space-y-2">
-                    <li><a href="templates/about.html" class="hover:text-olive-green">About Us</a></li>
-                    <li><a href="templates/products.html" class="hover:text-olive-green">Products</a></li>
-                    <li><a href="templates/faq.html" class="hover:text-olive-green">FAQ's</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="font-semibold mb-4">Follow Us</h3>
-                <div class="flex space-x-4">
-                    <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
+     <!-- 🌿 Modern Footer -->
+<footer class="bg-gradient-to-b from-gray-900 to-black text-gray-200 py-14 px-6">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 text-center md:text-left">
+
+    <!-- 🌱 Brand Info -->
+    <div>
+      <img src="../imgs/vh-l.png" alt="Vishuddh Herbals Logo" class="h-20 mx-auto md:mx-0 mb-4 rounded-xl shadow-lg">
+      <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+        At <span class="font-semibold text-green-500">Vishuddh Herbals</span>, we believe in the healing power of nature.  
+        Our herbal products are crafted using time-tested Ayurvedic ingredients to nourish your body,  
+        rejuvenate your skin and hair, and bring balance — the way nature intended.
+      </p>
+    </div>
+
+    <!-- ⚡ Quick Links -->
+    <div>
+      <h3 class="text-xl font-semibold text-green-400 mb-4 border-b-2 border-green-500 inline-block pb-1">
+        Quick Links
+      </h3>
+      <ul class="space-y-3">
+        <li><a href="templates/about.html" class="hover:text-green-400 transition">About Us</a></li>
+        <li><a href="templates/products.html" class="hover:text-green-400 transition">Products</a></li>
+        <li><a href="templates/faq.html" class="hover:text-green-400 transition">FAQ's</a></li>
+        <li><a href="templates/contact.html" class="hover:text-green-400 transition">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- 🌍 Social Media -->
+    <div>
+      <h3 class="text-xl font-semibold text-green-400 mb-4 border-b-2 border-green-500 inline-block pb-1">
+        Follow Us
+      </h3>
+      <div class="flex justify-center md:justify-start space-x-5">
+        <a href="#" class="hover:text-blue-500 transform hover:scale-110 transition duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
+        <a href="#" class="hover:text-pink-500 transform hover:scale-110 transition duration-300"><i class="fab fa-instagram text-xl"></i></a>
+        <a href="#" class="hover:text-sky-400 transform hover:scale-110 transition duration-300"><i class="fab fa-twitter text-xl"></i></a>
+        <a href="#" class="hover:text-red-600 transform hover:scale-110 transition duration-300"><i class="fab fa-youtube text-xl"></i></a>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="mt-6">
+        <p class="text-sm text-gray-400 mb-2">Subscribe for updates</p>
+        <div class="flex justify-center md:justify-start">
+          <input type="email" placeholder="Your email"
+            class="px-3 py-2 rounded-l-lg text-sm text-gray-800 focus:outline-none w-44 md:w-52" />
+          <button
+            class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-r-lg text-sm font-semibold transition">
+            Subscribe
+          </button>
         </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Line -->
+  <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
+    © 2025 <span class="text-green-400 font-semibold">Vishuddh Herbals</span>. All rights reserved.
+  </div>
+</footer>
 
     <script src="js/main.js"></script>
+
+<script>
+    const sliderImages = [
+      'imgs/b-1.jpeg',
+      'imgs/b-2.jpeg',
+      'imgs/b-3.jpeg',
+      'imgs/b-4.jpeg'
+    ];
+
+    let currentIndex = 0;
+    const imageEl = document.getElementById('slider-image');
+    const dotsContainer = document.getElementById('dots-container');
+
+    // Create dots dynamically
+    sliderImages.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.addEventListener('click', () => {
+        showSlide(index);
+        resetAutoSlide();
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('button');
+
+    function showSlide(index) {
+      currentIndex = index;
+
+      // fade + zoom effect (controlled by CSS)
+      imageEl.classList.remove('active');
+      imageEl.classList.add('inactive');
+
+      setTimeout(() => {
+        imageEl.src = sliderImages[currentIndex];
+        imageEl.classList.remove('inactive');
+        imageEl.classList.add('active');
+      }, 500);
+
+      updateDots();
+    }
+
+    function updateDots() {
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    let slideTimer = setInterval(nextSlide, 4000);
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % sliderImages.length;
+      showSlide(currentIndex);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(slideTimer);
+      slideTimer = setInterval(nextSlide, 4000);
+    }
+
+    showSlide(0);
+  </script>
 </body>
 </html>

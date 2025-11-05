@@ -8,6 +8,13 @@
     <link rel="icon" href="../imgs/vh-l.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+     <style>
+    .active-thumb {
+      border-color: #16a34a !important;
+      transform: scale(1.05);
+    }
+  </style>
+
 </head>
 <body class="flex flex-col min-h-screen font-sans">
 
@@ -27,6 +34,7 @@
     </div>
 
     <!-- Main Navbar -->
+
     <nav id="navbar" class="fixed w-full top-0 left-0 z-30 bg-green-900 bg-opacity-40 backdrop-blur-sm transition-all duration-300">
   <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
     <div>
@@ -65,40 +73,46 @@
   </ul>
 </nav>
 
- 
-  <!-- ✅ Hero Banner -->
+    <!-- ✅ Hero Banner -->
   <section
-    class="relative bg-cover bg-center bg-no-repeat h-[260px] md:h-[360px]"
+    class="relative bg-cover bg-center bg-no-repeat h-[50px] md:h-[35px] lg:h-[35px]"
     style="background-image: url('../imgs/banner-product.jpg');"
   >
     <div class="absolute inset-0 bg-green-900 bg-opacity-50"></div>
-    <div
-      class="relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-4"
-    >
-      <h1 class="text-3xl md:text-5xl font-bold text-[#abd9c3] mb-2">
-        Our Herbal Products
-      </h1>
-      <p class="max-w-2xl text-base md:text-lg">
-        Crafted with care from nature’s best ingredients
-      </p>
-    </div>
+   
   </section>
+  <!-- ✅ Product Details Section -->
+  <section class="flex flex-col md:flex-row max-w-6xl mx-auto bg-white rounded-2xl shadow-md mt-10 p-6 gap-10">
+    
+    <!-- Left Side: Image Gallery -->
+    <div class="md:w-1/2">
+      <img id="main-image" src="" alt="Product" class="rounded-2xl w-full h-96 object-cover shadow-md transition-all duration-500">
+      
+      <div id="preview-images" class="flex justify-center gap-3 mt-4 flex-wrap">
+        <!-- Thumbnails will be inserted here -->
+      </div>
+    </div>
 
-  <!-- ✅ Products Grid -->
-  <section class="py-16 px-6 md:px-12">
-    <div
-      id="products-grid"
-      class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
-    ></div>
+    <!-- Right Side: Details -->
+    <div class="md:w-1/2 flex flex-col justify-between">
+      <div>
+        <h2 id="product-title" class="text-3xl font-bold text-green-800"></h2>
+        <p id="product-description" class="text-gray-700 mt-3"></p>
 
-    <!-- View More Button -->
-    <div class="text-center mt-10">
-      <button
-        id="view-more-btn"
-        class="bg-green-700 text-white px-6 py-2 rounded-full hover:bg-green-800 transition"
-      >
-        View More
-      </button>
+        <h3 class="mt-6 font-semibold text-green-700">Key Ingredients</h3>
+        <p id="product-ingredients" class="text-gray-600 mt-1"></p>
+
+        <div class="mt-6 flex items-center space-x-4">
+          <p id="original-price" class="text-gray-500 line-through text-lg"></p>
+          <p id="offer-price" class="text-green-800 text-2xl font-bold"></p>
+        </div>
+      </div>
+
+      <div class="mt-8">
+        <button class="bg-green-700 hover:bg-green-800 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-md transition">
+          Place Order
+        </button>
+      </div>
     </div>
   </section>
 
@@ -163,114 +177,124 @@
   </div>
 </footer>
 
-<script src="../js/main.js"></script>
 
-   <!-- ✅ Script -->
+    <script src="../js/main.js"></script>
+
+  <!-- ✅ Script -->
   <script>
-    const products = [
-      {
-        key: "soap",
+    const products = {
+      soap: {
         title: "Natural Soap",
         desc: "Made from pure herbal extracts for soft and healthy skin.",
-        img: "/imgs/soap.webp",
-        price: "₹120",
+        ingredients: "Neem, Aloe Vera, Sandalwood",
+        images: ["/imgs/soap.webp", "/imgs/neemapowder.webp", "/imgs/aloe-vera.jpg", "/imgs/Tulsi.jpeg"],
+        price: 150,
+        offer: 120
       },
-      {
-        key: "shampoo",
+      shampoo: {
         title: "Herbal Shampoo",
         desc: "Nourish your hair with natural herbs and essential oils.",
-        img: "/imgs/Herbal_Shampoo.webp",
-        price: "₹180",
+        ingredients: "Amla, Bhringraj, Shikakai",
+        images: ["/imgs/Herbal_Shampoo.webp", "/imgs/amla-powder.webp", "/imgs/Tulsi.jpeg"],
+        price: 220,
+        offer: 180
       },
-      {
-        key: "hairoil",
+      hairoil: {
         title: "Usiri Hair Oil",
-        desc: "Strengthens roots and prevents hair fall with the goodness of Amla.",
-        img: "/imgs/amla-powder.webp",
-        price: "₹220",
+        desc: "Strengthens roots and prevents hair fall with the goodness of Amla and herbal oils.",
+        ingredients: "Amla, Coconut Oil, Bhringraj",
+        images: ["/imgs/amla-powder.webp", "/imgs/Herbal_Shampoo.webp", "/imgs/Tulsi.jpeg"],
+        price: 260,
+        offer: 220
       },
-      {
-        key: "facewash",
+      facewash: {
         title: "Neem Face Wash",
         desc: "Removes dirt and acne-causing bacteria for fresh and clear skin.",
-        img: "/imgs/neemapowder.webp",
-        price: "₹150",
+        ingredients: "Neem, Tulsi, Aloe Vera",
+        images: ["/imgs/neemapowder.webp", "/imgs/aloe-vera.jpg", "/imgs/Tulsi.jpeg"],
+        price: 180,
+        offer: 150
       },
-      {
-        key: "lotion",
+      lotion: {
         title: "Tulsi Body Lotion",
         desc: "Moisturizes and protects your skin naturally all day long.",
-        img: "/imgs/Tulsi.jpeg",
-        price: "₹200",
+        ingredients: "Tulsi, Aloe Vera, Almond Oil",
+        images: ["/imgs/Tulsi.jpeg", "/imgs/aloe-vera.jpg", "/imgs/soap.webp"],
+        price: 240,
+        offer: 200
       },
-      {
-        key: "aloevera",
+      aloevera: {
         title: "Aloe Vera Gel",
         desc: "Soothes and cools your skin while keeping it hydrated.",
-        img: "/imgs/aloe-vera.jpg",
-        price: "₹160",
+        ingredients: "Aloe Vera, Vitamin E",
+        images: ["/imgs/aloe-vera.jpg", "/imgs/Tulsi.jpeg", "/imgs/neemapowder.webp"],
+        price: 190,
+        offer: 160
       },
-      {
-        key: "cream",
+      cream: {
         title: "Sandalwood Face Cream",
         desc: "Brightens your complexion and gives a smooth texture.",
-        img: "/imgs/sandalwood.webp",
-        price: "₹250",
+        ingredients: "Sandalwood, Turmeric, Rose Water",
+        images: ["/imgs/sandalwood.webp", "/imgs/turmeric_pack.webp", "/imgs/rose_water.jpeg"],
+        price: 290,
+        offer: 250
       },
-      {
-        key: "toothpaste",
+      toothpaste: {
         title: "Herbal Toothpaste",
         desc: "Protects gums and teeth naturally with herbal power.",
-        img: "/imgs/herbal_toothpaste.jpg",
-        price: "₹100",
+        ingredients: "Clove, Neem, Mint",
+        images: ["/imgs/herbal_toothpaste.jpg", "/imgs/neemapowder.webp"],
+        price: 130,
+        offer: 100
       },
-      {
-        key: "toner",
+      toner: {
         title: "Rose Water Toner",
         desc: "Refreshes and tones your skin for a natural glow.",
-        img: "/imgs/rose_water.jpeg",
-        price: "₹130",
+        ingredients: "Pure Rose Extracts, Aloe Vera",
+        images: ["/imgs/rose_water.jpeg", "/imgs/aloe-vera.jpg"],
+        price: 160,
+        offer: 130
       },
-      {
-        key: "facepack",
+      facepack: {
         title: "Turmeric Face Pack",
         desc: "Removes tan and impurities for bright, healthy skin.",
-        img: "/imgs/turmeric_pack.webp",
-        price: "₹190",
-      },
-    ];
+        ingredients: "Turmeric, Multani Mitti, Sandalwood",
+        images: ["/imgs/turmeric_pack.webp", "/imgs/sandalwood.webp"],
+        price: 230,
+        offer: 190
+      }
+    };
 
-    const grid = document.getElementById("products-grid");
+    const params = new URLSearchParams(window.location.search);
+    const key = params.get("product");
 
-    // Show first 8 products initially
-    const initialProducts = 8;
-    function renderProducts(count) {
-      grid.innerHTML = "";
-      products.slice(0, count).forEach((p) => {
-        const card = document.createElement("div");
-        card.className =
-          "product-card bg-white rounded-2xl shadow-md hover:shadow-lg p-4 cursor-pointer";
-        card.onclick = () =>
-          (window.location.href = `product-details.html?product=${p.key}`);
-        card.innerHTML = `
-          <img src="${p.img}" alt="${p.title}" class="rounded-xl w-full h-48 object-cover">
-          <h3 class="mt-4 text-lg font-semibold text-green-700">${p.title}</h3>
-          <p class="text-sm text-gray-600 mt-1">${p.desc}</p>
-          <p class="mt-3 text-green-800 font-semibold">Price: ${p.price}</p>
-        `;
-        grid.appendChild(card);
+    if (products[key]) {
+      const p = products[key];
+      document.getElementById("product-title").textContent = p.title;
+      document.getElementById("product-description").textContent = p.desc;
+      document.getElementById("product-ingredients").textContent = p.ingredients;
+      document.getElementById("original-price").textContent = "₹" + p.price;
+      document.getElementById("offer-price").textContent = "₹" + p.offer;
+
+      const mainImg = document.getElementById("main-image");
+      mainImg.src = p.images[0];
+
+      const preview = document.getElementById("preview-images");
+      p.images.forEach((img, i) => {
+        const thumb = document.createElement("img");
+        thumb.src = img;
+        thumb.className = "w-20 h-20 rounded-xl object-cover cursor-pointer border-2 border-transparent hover:border-green-600 transition";
+        if (i === 0) thumb.classList.add("active-thumb");
+        thumb.addEventListener("click", () => {
+          document.querySelectorAll("#preview-images img").forEach(t => t.classList.remove("active-thumb"));
+          thumb.classList.add("active-thumb");
+          mainImg.src = img;
+        });
+        preview.appendChild(thumb);
       });
+    } else {
+      document.body.innerHTML = "<div class='text-center mt-40 text-xl text-gray-700'>Product not found.</div>";
     }
-
-    // Initial render
-    renderProducts(initialProducts);
-
-    // Handle View More
-    const btn = document.getElementById("view-more-btn");
-    btn.addEventListener("click", () => {
-      renderProducts(products.length);
-      btn.style.display = "none";
-    });
   </script>
 </body>
 </html>
