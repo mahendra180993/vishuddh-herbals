@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products - Demo Project</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="../imgs/vh-l.png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Products - Vishuddh Herbals</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../imgs/vh-l.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body class="flex flex-col min-h-screen font-sans">
 
-    <!-- Top Navbar -->
+<body class="flex flex-col min-h-screen font-sans">
+   <!-- Top Navbar -->
     <div class="bg-gray-100 text-gray-700 text-sm py-2 px-6 hidden sm:flex items-center">
         <div class="max-w-6xl mx-auto w-full flex justify-between">
             <div class="flex items-center space-x-4">
@@ -65,7 +65,6 @@
   </ul>
 </nav>
 
- 
   <!-- ✅ Hero Banner -->
   <section
     class="relative bg-cover bg-center bg-no-repeat h-[260px] md:h-[360px]"
@@ -75,7 +74,7 @@
     <div
       class="relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-4"
     >
-      <h1 class="text-3xl md:text-5xl font-bold text-[#abd9c3] mb-2">
+      <h1 class="text-3xl md:text-5xl font-bold text-yellow-400 mb-2">
         Our Herbal Products
       </h1>
       <p class="max-w-2xl text-base md:text-lg">
@@ -88,7 +87,7 @@
   <section class="py-16 px-6 md:px-12">
     <div
       id="products-grid"
-      class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+      class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
     ></div>
 
     <!-- View More Button -->
@@ -102,9 +101,7 @@
     </div>
   </section>
 
-   <!-- Footer -->
-    <!-- 🌿 Modern Footer -->
-<footer class="bg-gradient-to-b from-gray-900 to-black text-gray-200 py-14 px-6">
+  <footer class="bg-gradient-to-b from-gray-900 to-black text-gray-200 py-14 px-6">
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 text-center md:text-left">
 
     <!-- 🌱 Brand Info -->
@@ -163,113 +160,129 @@
   </div>
 </footer>
 
-<script src="../js/main.js"></script>
 
-   <!-- ✅ Script -->
+  <!-- ✅ Script -->
   <script>
     const products = [
       {
-        key: "soap",
-        title: "Natural Soap",
-        desc: "Made from pure herbal extracts for soft and healthy skin.",
-        img: "/imgs/soap.webp",
-        price: "₹120",
+        key: "sunnipindi",
+        title: "Sunnipindi Herbal",
+        desc: "Herbal Bath Powder Ubtan Body Scrub Face Pack - Enriched with Ayurvedic Herbs (250g)",
+        img: "/imgs/p-1.jpg",
+        price: 392.74,
+        offer: 269
       },
       {
-        key: "shampoo",
-        title: "Herbal Shampoo",
-        desc: "Nourish your hair with natural herbs and essential oils.",
-        img: "/imgs/Herbal_Shampoo.webp",
-        price: "₹180",
+        key: "mulcottonsaree",
+        title: "Mul Cotton Saree ",
+        desc: "Polka Printed Pure Mul Cotton Saree without Blouse",
+        img: "/imgs/p-3.jpg",
+        price: 2999,
+        offer: 1299
       },
       {
-        key: "hairoil",
-        title: "Usiri Hair Oil",
-        desc: "Strengthens roots and prevents hair fall with the goodness of Amla.",
-        img: "/imgs/amla-powder.webp",
-        price: "₹220",
+        key: "sunnipindibabies",
+        title: "Sunnipindi Herbal Babies",
+        desc: "Ubtan Bath Powder for Babies – Gentle & Safe 3-in-1 Formula (250g)",
+        img: "/imgs/p-2.jpg",
+        price: 392.74,
+        offer: 269
       },
       {
-        key: "facewash",
-        title: "Neem Face Wash",
-        desc: "Removes dirt and acne-causing bacteria for fresh and clear skin.",
-        img: "/imgs/neemapowder.webp",
-        price: "₹150",
+        key: "embroideredsaree",
+        title: "Embroidered Pure Mul Cotton Saree",
+        desc: "Women's stitched Lace floral Embroidered Pure Mul Cotton Saree Without Blouse",
+        img: "/imgs/p-4.jpg",
+        price: 2999,
+        offer: 1299
       },
       {
-        key: "lotion",
-        title: "Tulsi Body Lotion",
-        desc: "Moisturizes and protects your skin naturally all day long.",
-        img: "/imgs/Tulsi.jpeg",
-        price: "₹200",
+        key: "hairconditioner",
+        title: "Hair Conditioner Powder ",
+        desc: "Hair Conditioner Powder for Hair Care, Healthy Scalp, Nourishment, Mask, Helps to Control Dandruff, Hairfall | Natural Cleanser (100)",
+        img: "/imgs/p-5(1).jpg",
+        price: 200,
+        offer: 159
       },
       {
-        key: "aloevera",
-        title: "Aloe Vera Gel",
-        desc: "Soothes and cools your skin while keeping it hydrated.",
-        img: "/imgs/aloe-vera.jpg",
-        price: "₹160",
+        key: "ubtanbathpowder",
+        title: "Nalangu Maavu UBTAN Bath Powder",
+        desc: "Sunnipindi Herbal Nalangu Maavu UBTAN Bath Powder For Babies, 3 in 1 Ubtan Body Scrub | Face Pack | Mask (500, grams)",
+        img: "/imgs/p-2.jpg",
+        price: 738.39,
+        offer: 489
       },
       {
-        key: "cream",
-        title: "Sandalwood Face Cream",
-        desc: "Brightens your complexion and gives a smooth texture.",
-        img: "/imgs/sandalwood.webp",
-        price: "₹250",
+        key: "hairwashpowder",
+        title: "Natural Hair Wash Powder",
+        desc: "Natural Hair Wash Powder Natural Hair Shampoo With Herbal Amla Reetha Shikakai And Methi Powder For Men & Women, Totally Organic | Hair Growth | Reduce Hair Fall & Dandruff",
+        img: "/imgs/p-6.jpg",
+        price: 599,
+        offer: 269
       },
       {
-        key: "toothpaste",
-        title: "Herbal Toothpaste",
-        desc: "Protects gums and teeth naturally with herbal power.",
-        img: "/imgs/herbal_toothpaste.jpg",
-        price: "₹100",
+        key: "hennapowder",
+        title: "Henna Powder Enriched",
+        desc: "Henna Powder Enriched With Natural Herbals For Hair Growth, Colour & Conditioning (500)",
+        img: "/imgs/p-7.jpg",
+        price: 500,
+        offer: 359
       },
       {
-        key: "toner",
-        title: "Rose Water Toner",
-        desc: "Refreshes and tones your skin for a natural glow.",
-        img: "/imgs/rose_water.jpeg",
-        price: "₹130",
-      },
-      {
-        key: "facepack",
-        title: "Turmeric Face Pack",
-        desc: "Removes tan and impurities for bright, healthy skin.",
-        img: "/imgs/turmeric_pack.webp",
-        price: "₹190",
-      },
+        key: "multanimitti",
+        title: "Multani Mitti Powder",
+        desc: "Natural Multani Mitti Powder For Face Pack, Hair Pack For Soft and Glowing Skin and hair Bentonite Clay - 200g",
+        img: "/imgs/p-8.jpg",
+        price: 299,
+        offer: 199
+      }
     ];
 
     const grid = document.getElementById("products-grid");
+    const btn = document.getElementById("view-more-btn");
 
-    // Show first 8 products initially
-    const initialProducts = 8;
-    function renderProducts(count) {
+    let visibleCount = 6; // show 3 products initially
+
+    function renderProducts() {
       grid.innerHTML = "";
-      products.slice(0, count).forEach((p) => {
+
+      products.slice(0, visibleCount).forEach((p) => {
+        const discount = Math.round(((p.price - p.offer) / p.price) * 100);
+
         const card = document.createElement("div");
         card.className =
-          "product-card bg-white rounded-2xl shadow-md hover:shadow-lg p-4 cursor-pointer";
+          "bg-white rounded-2xl shadow-md hover:shadow-lg p-4 cursor-pointer relative overflow-hidden transition-transform transform hover:-translate-y-1";
         card.onclick = () =>
           (window.location.href = `product-details.html?product=${p.key}`);
+
         card.innerHTML = `
-          <img src="${p.img}" alt="${p.title}" class="rounded-xl w-full h-48 object-cover">
-          <h3 class="mt-4 text-lg font-semibold text-green-700">${p.title}</h3>
-          <p class="text-sm text-gray-600 mt-1">${p.desc}</p>
-          <p class="mt-3 text-green-800 font-semibold">Price: ${p.price}</p>
+          <div class="relative">
+            <img src="${p.img}" alt="${p.title}" class="rounded-xl w-full h-56 object-contain bg-gray-50" />
+            <span class="absolute top-3 right-3 bg-white text-red-600 border border-red-600 text-xs font-bold px-2 py-1 rounded-full shadow-sm">
+              ${discount}% OFF
+            </span>
+          </div>
+          <h3 class="mt-4 text-lg font-semibold text-yellow-600">${p.title}</h3>
+          <p class="text-sm text-gray-600 mt-1 line-clamp-3">${p.desc}</p>
+          <div class="mt-3 flex items-center space-x-2">
+            <p class="text-gray-500 line-through text-sm">₹${p.price}</p>
+            <p class="text-green-700 font-semibold text-lg">₹${p.offer}</p>
+          </div>
         `;
         grid.appendChild(card);
       });
+
+      // Hide button if all shown
+      if (visibleCount >= products.length) {
+        btn.style.display = "none";
+      }
     }
 
-    // Initial render
-    renderProducts(initialProducts);
+    renderProducts();
 
-    // Handle View More
-    const btn = document.getElementById("view-more-btn");
     btn.addEventListener("click", () => {
-      renderProducts(products.length);
-      btn.style.display = "none";
+      visibleCount += 3;
+      renderProducts();
     });
   </script>
 </body>

@@ -1,124 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products - Demo Project</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="../imgs/vh-l.png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-     <style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Products - Vishuddh Herbals</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="../imgs/vh-l.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
     .active-thumb {
       border-color: #16a34a !important;
       transform: scale(1.05);
     }
   </style>
-
 </head>
+
 <body class="flex flex-col min-h-screen font-sans">
 
-    <!-- Top Navbar -->
-    <div class="bg-gray-100 text-gray-700 text-sm py-2 px-6 hidden sm:flex items-center">
-        <div class="max-w-6xl mx-auto w-full flex justify-between">
-            <div class="flex items-center space-x-4">
-                <div class="flex items-center gap-1"><i class="fas fa-envelope"></i><span>info@example.com</span></div>
-                <div class="flex items-center gap-1"><i class="fas fa-phone"></i><span>+91 1234567890</span></div>
-            </div>
-            <div class="flex items-center space-x-4">
-                <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-    </div>
+  <!-- ✅ Navbar -->
+  <nav id="navbar" class="fixed w-full top-0 left-0 z-30 bg-green-900 bg-opacity-40 backdrop-blur-sm transition-all duration-300">
+    <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
+      <div><img src="../imgs/vh-w.png" alt="Logo" class="h-10" /></div>
 
-    <!-- Main Navbar -->
+      <ul id="nav-links" class="hidden lg:flex space-x-8 font-semibold text-white">
+        <li><a href="/" class="hover:text-green-400">Home</a></li>
+        <li><a href="about.html" class="hover:text-green-400">About Us</a></li>
+        <li><a href="products.html" class="hover:text-green-400">Products</a></li>
+        <li><a href="reviews.html" class="hover:text-green-400">Reviews</a></li>
+        <li><a href="faq.html" class="hover:text-green-400">FAQ's</a></li>
+      </ul>
 
-    <nav id="navbar" class="fixed w-full top-0 left-0 z-30 bg-green-900 bg-opacity-40 backdrop-blur-sm transition-all duration-300">
-  <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
-    <div>
-      <img src="../imgs/vh-w.png" alt="Logo" class="h-10" />
-    </div>
-
-    <!-- Desktop Menu -->
-    <ul id="nav-links" class="hidden lg:flex space-x-8 font-semibold text-white">
-      <li><a href="/" class="hover:text-green-400">Home</a></li>
-      <li><a href="about.html" class="hover:text-green-400">About Us</a></li>
-      <li><a href="products.html" class="hover:text-green-400">Products</a></li>
-      <li><a href="reviews.html" class="hover:text-green-400">Reviews</a></li>
-      <li><a href="faq.html" class="hover:text-green-400">FAQ's</a></li>
-    </ul>
-
-    <!-- Contact & Menu Button -->
-    <div class="flex items-center space-x-4">
-      <a href="contact.html"
-         class="hidden lg:inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded transition">
-        Contact
-      </a>
-      <button id="menu-toggle" class="block lg:hidden text-white text-2xl focus:outline-none">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
-  </div>
-
-  <!-- Mobile/Tablet Menu -->
-  <ul id="mobile-menu" class="hidden flex-col items-center bg-green-900 bg-opacity-90 text-white font-semibold space-y-4 py-6 lg:hidden">
-    <li><a href="index.html" class="hover:text-green-400 border-b border-white pb-1">Home</a></li>
-    <li><a href="about.html" class="hover:text-green-400 border-b border-white pb-1">About Us</a></li>
-    <li><a href="products.html" class="hover:text-green-400 border-b border-white pb-1">Products</a></li>
-    <li><a href="reviews.html" class="hover:text-green-400 border-b border-white pb-1">Reviews</a></li>
-    <li><a href="faq.html" class="hover:text-green-400 border-b border-white pb-1">FAQ's</a></li>
-    <li><a href="contact.html" class="bg-green-500 px-4 py-2 rounded hover:bg-green-600 transition">Contact</a></li>
-  </ul>
-</nav>
-
-    <!-- ✅ Hero Banner -->
-  <section
-    class="relative bg-cover bg-center bg-no-repeat h-[50px] md:h-[35px] lg:h-[35px]"
-    style="background-image: url('../imgs/banner-product.jpg');"
-  >
-    <div class="absolute inset-0 bg-green-900 bg-opacity-50"></div>
-   
-  </section>
-  <!-- ✅ Product Details Section -->
-  <section class="flex flex-col md:flex-row max-w-6xl mx-auto bg-white rounded-2xl shadow-md mt-10 p-6 gap-10">
-    
-    <!-- Left Side: Image Gallery -->
-    <div class="md:w-1/2">
-      <img id="main-image" src="" alt="Product" class="rounded-2xl w-full h-96 object-cover shadow-md transition-all duration-500">
-      
-      <div id="preview-images" class="flex justify-center gap-3 mt-4 flex-wrap">
-        <!-- Thumbnails will be inserted here -->
-      </div>
-    </div>
-
-    <!-- Right Side: Details -->
-    <div class="md:w-1/2 flex flex-col justify-between">
-      <div>
-        <h2 id="product-title" class="text-3xl font-bold text-green-800"></h2>
-        <p id="product-description" class="text-gray-700 mt-3"></p>
-
-        <h3 class="mt-6 font-semibold text-green-700">Key Ingredients</h3>
-        <p id="product-ingredients" class="text-gray-600 mt-1"></p>
-
-        <div class="mt-6 flex items-center space-x-4">
-          <p id="original-price" class="text-gray-500 line-through text-lg"></p>
-          <p id="offer-price" class="text-green-800 text-2xl font-bold"></p>
-        </div>
-      </div>
-
-      <div class="mt-8">
-        <button class="bg-green-700 hover:bg-green-800 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-md transition">
-          Place Order
+      <div class="flex items-center space-x-4">
+        <a href="contact.html"
+           class="hidden lg:inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded transition">
+          Contact
+        </a>
+        <button id="menu-toggle" class="block lg:hidden text-white text-2xl focus:outline-none">
+          <i class="fas fa-bars"></i>
         </button>
       </div>
     </div>
+  </nav>
+
+  <!-- ✅ Hero Banner -->
+  <section
+    class="relative bg-cover bg-center bg-no-repeat h-[120px] md:h-[200px]"
+    style="background-image: url('../imgs/banner-product.jpg');"
+  >
+    <div class="absolute inset-0 bg-green-900 bg-opacity-50"></div>
   </section>
 
-   <!-- Footer -->
-    <!-- 🌿 Modern Footer -->
-<footer class="bg-gradient-to-b from-gray-900 to-black text-gray-200 py-14 px-6">
+  <!-- ✅ Product Details Section -->
+  <section class="flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto bg-white rounded-2xl shadow-md mt-10 p-6 gap-10">
+    
+    <!-- Left: Image Gallery -->
+    <div class="md:w-1/2 flex flex-col items-center justify-center">
+      <img id="main-image" src="" alt="Product" class="rounded-2xl w-full h-[380px] object-contain shadow-md transition-all duration-500">
+      <div id="preview-images" class="flex justify-center gap-3 mt-4 flex-wrap"></div>
+    </div>
+
+    <!-- Right: Product Info -->
+    <div class="md:w-1/2 flex flex-col justify-center">
+      <div>
+        <h2 id="product-title" class="text-3xl font-bold text-yellow-500"></h2>
+        <p id="product-description" class="text-gray-700 mt-3"></p>
+
+        <!-- Ingredients Section -->
+        <div id="ingredients-section" class="hidden">
+          <h3 class="mt-6 font-semibold text-yellow-500">Key Ingredients</h3>
+          <p id="product-ingredients" class="text-gray-600 mt-1"></p>
+        </div>
+
+        <!-- About Product Section -->
+        <h3 class="mt-6 font-semibold text-yellow-500">About Product</h3>
+        <p id="product-about" class="text-gray-600 mt-1"></p>
+
+        <!-- ✅ Price Section with Discount -->
+        <div class="mt-6 flex items-center space-x-4">
+          <p id="original-price" class="text-gray-500 line-through text-lg"></p>
+          <p id="offer-price" class="text-green-800 text-2xl font-bold"></p>
+          <span id="discount" class="text-red-600 text-sm font-semibold"></span>
+        </div>
+
+        <!-- Place Order -->
+        <div class="mt-8">
+          <a id="order-link"
+            href="#"
+            target="_blank"
+            class="bg-yellow-400 hover:bg-green-800 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-md transition inline-block">
+            Place Order
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Footer -->
+  <footer class="bg-gradient-to-b from-gray-900 to-black text-gray-200 py-14 px-6">
   <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 text-center md:text-left">
 
     <!-- 🌱 Brand Info -->
@@ -177,92 +156,97 @@
   </div>
 </footer>
 
-
-    <script src="../js/main.js"></script>
-
   <!-- ✅ Script -->
   <script>
     const products = {
-      soap: {
-        title: "Natural Soap",
-        desc: "Made from pure herbal extracts for soft and healthy skin.",
-        ingredients: "Neem, Aloe Vera, Sandalwood",
-        images: ["/imgs/soap.webp", "/imgs/neemapowder.webp", "/imgs/aloe-vera.jpg", "/imgs/Tulsi.jpeg"],
-        price: 150,
-        offer: 120
+      sunnipindi: {
+        title: "Sunnipindi",
+        desc: "Sunnipindi Herbal Bath Powder Ubtan Body Scrub Face Pack for women and men - Tan Removal - Ancient Ayurvedic Healing - Enriched with Numerous Herbs (250 gms)",
+        ingredients: "Moong Dal, Chana Dal, Neem, Multani Mitti, Bavanchalu, Orange Peel, Lemon Peel, Kapoor Kachari, Vettiver, Rose Petal, Camphor, Pathika, Kasturi Turmeric, Rice, Tulsi, Methi, Karakaya",
+        about: "Our Sunnipindi Bath Powder is an ancient Ayurvedic blend of natural herbs and pulses used traditionally to rejuvenate skin, remove tan, and give a healthy glow. 100% handmade, chemical-free, and eco-friendly.",
+        images: ["/imgs/p-1.jpg", "/imgs/p-1(1).jpg", "/imgs/p-1(2).jpg", "/imgs/p-1(3).jpg"],
+        price: 392.74,
+        offer: 269,
+        link: "https://www.amazon.in/Vishuddh-Herbals-Sunnipindi-Herbal-Powder/dp/B0CHNS9W4C/"
       },
-      shampoo: {
-        title: "Herbal Shampoo",
-        desc: "Nourish your hair with natural herbs and essential oils.",
-        ingredients: "Amla, Bhringraj, Shikakai",
-        images: ["/imgs/Herbal_Shampoo.webp", "/imgs/amla-powder.webp", "/imgs/Tulsi.jpeg"],
-        price: 220,
-        offer: 180
+      mulcottonsaree: {
+        title: "Polka Printed Pure Mul Cotton Saree without Blouse",
+        desc: "Pure Cotton | Length: 5.5 m | Print: Solid | Weave: Plain",
+        about: "Saree details: Pure Cotton | Length: 5.5 m | Print: Solid | Weave: Plain | Included: Saree Only | Width: 1.19 m | Wash Care: Dry Clean or Hand Wash only.",
+        images: ["/imgs/p-3.jpg", "/imgs/p-3(1).jpg", "/imgs/p-3(2).jpg"],
+        price: 2999,
+        offer: 1299,
+        link: "https://www.amazon.in/VYUTI-Polka-Cotton-without-Blouse/dp/B0DVR4LYSK/"
       },
-      hairoil: {
-        title: "Usiri Hair Oil",
-        desc: "Strengthens roots and prevents hair fall with the goodness of Amla and herbal oils.",
-        ingredients: "Amla, Coconut Oil, Bhringraj",
-        images: ["/imgs/amla-powder.webp", "/imgs/Herbal_Shampoo.webp", "/imgs/Tulsi.jpeg"],
-        price: 260,
-        offer: 220
+      sunnipindibabies: {
+        title: "Sunnipindi Herbal Babies",
+        desc: "Sunnipindi Herbal Nalangu Maavu Ubtan Bath Powder for Babies — 3-in-1 Ubtan, Scrub & Mask (250 gms)",
+        ingredients: "Moong Dal, Chana Dal, Neem, Multani Mitti, Bavanchalu, Orange Peel, Lemon Peel, Tulsi",
+        about: "Specially formulated for babies' delicate skin — cleanses, protects, and nourishes naturally with age-old Ayurvedic ingredients.",
+        images: ["/imgs/p-2.jpg", "/imgs/p-1(1).jpg", "/imgs/p-1(2).jpg"],
+        price: 392.74,
+        offer: 269,
+        link: "https://www.amazon.in/Vishuddh-Herbals-Sunnipindi-Herbal-Nalangu/dp/B0D8ZC7TLJ/"
       },
-      facewash: {
-        title: "Neem Face Wash",
-        desc: "Removes dirt and acne-causing bacteria for fresh and clear skin.",
-        ingredients: "Neem, Tulsi, Aloe Vera",
-        images: ["/imgs/neemapowder.webp", "/imgs/aloe-vera.jpg", "/imgs/Tulsi.jpeg"],
-        price: 180,
-        offer: 150
+      embroideredsaree: {
+        title: "Women's stitched Lace floral Embroidered Pure Mul Cotton Saree Without Blouse",
+        desc: "Pure cotton saree crafted from high-quality mul cotton fabric, offering comfort and breathability perfect for Indian weather",
+        about: "PREMIUM COTTON MATERIAL: Pure cotton saree crafted from high-quality mul cotton fabric, offering comfort and breathability perfect for Indian weather VIBRANT COLOUR: Stunning orange saree with decorative tassels, making it ideal for both casual and semi-formal occasions DIMENSIONS & WEIGHT: Saree measures 550 cm in length with package dimensions of 40 x 25 x 2 cm, weighing 250 grams CARE INSTRUCTIONS: Hand wash recommended to maintain the saree's colour vibrancy and embroidery quality",
+        images: ["/imgs/p-4.jpg", "/imgs/p-4(1).jpg", "/imgs/p-4(2).jpg", "/imgs/p-4(3).jpg"],
+        price: 2999,
+        offer: 1299,
+        link: "https://www.amazon.in/VYUTI-Womens-stitched-Embroidered-Without/dp/B0FMJR68WN/"
       },
-      lotion: {
-        title: "Tulsi Body Lotion",
-        desc: "Moisturizes and protects your skin naturally all day long.",
-        ingredients: "Tulsi, Aloe Vera, Almond Oil",
-        images: ["/imgs/Tulsi.jpeg", "/imgs/aloe-vera.jpg", "/imgs/soap.webp"],
-        price: 240,
-        offer: 200
+      hairconditioner: {
+        title: "Hair Conditioner Powder for Hair Care, Healthy Scalp, Nourishment, Mask, Helps to Control Dandruff, Hairfall | Natural Cleanser (100)",
+        desc: "Pure cotton saree crafted from high-quality mul cotton fabric, offering comfort and breathability perfect for Indian weather",
+        ingredients: "Hair conditioner is a hair care product designed to improve the texture, appearance, and manageability of hair.Ingredients: Neem, Amla, Methi (fenugreek), Shikakai, Bhringraj, Hibiscus, Reetha (soapnuts), Henna, Brahmi.Neem: Neem is excellent for maintaining a healthy scalp. It has antifungal and antibacterial properties that can help with dandruff and scalp issues.Amla (Indian Gooseberry): Amla is rich in vitamin C and antioxidants, which can promote hair growth, prevent premature graying, and add shine to the hair.",
+        about: "PREMIUM COTTON MATERIAL: Pure cotton saree crafted from high-quality mul cotton fabric, offering comfort and breathability perfect for Indian weather VIBRANT COLOUR: Stunning orange saree with decorative tassels, making it ideal for both casual and semi-formal occasions DIMENSIONS & WEIGHT: Saree measures 550 cm in length with package dimensions of 40 x 25 x 2 cm, weighing 250 grams CARE INSTRUCTIONS: Hand wash recommended to maintain the saree's colour vibrancy and embroidery quality",
+        images: ["/imgs/p-5(1).jpg", "/imgs/p-5.jpg", "/imgs/p-5(2).jpg", "/imgs/p-5(3).jpg", "/imgs/p-5(4).jpg", "/imgs/p-5(5).jpg"],
+        price: 200,
+        offer: 159,
+        link: "https://www.amazon.in/Vishuddh-Conditioner-Nourishment-Dandruff-Hairfall/dp/B0CJ6D5YG5/"
       },
-      aloevera: {
-        title: "Aloe Vera Gel",
-        desc: "Soothes and cools your skin while keeping it hydrated.",
-        ingredients: "Aloe Vera, Vitamin E",
-        images: ["/imgs/aloe-vera.jpg", "/imgs/Tulsi.jpeg", "/imgs/neemapowder.webp"],
-        price: 190,
-        offer: 160
+      ubtanbathpowder: {
+        title: "Hair Conditioner Powder for Hair Care, Healthy Scalp, Nourishment, Mask, Helps to Control Dandruff, Hairfall | Natural Cleanser (100)",
+        desc: "Vishuddh Baby Herbs is a traditional ayurvedic beauty bath powder that has been used for centuries in India to nourish and protect a baby's delicate skin.",
+        ingredients: "kasturi pasupu, Tulasi Leaves,Neem Leaves,Thunga Masta, Vattiverlu,Konda karpuram, Kamala Thokkalu,Rose Petals, Ulavalu, Mudibiyam, Pesalu, Methi, Senagalu",
+        about: "Gentle Cleansing: Vishuddh Baby Herbs is a gentle, herbal bath powder suitable for babies and children. Natural Ingredients: Crafted from 100% natural ingredients, this bath powder is free from harsh chemicals.Multipurpose: Can be used for bathing, massaging, and cleansing the delicate skin of infants and toddlers.Convenient Pack: Comes in a convenient 500 gram pack, making it easy to use and store.Trusted Brand: Vishuddh Herbals is a trusted brand known for its high-quality, natural baby care products.",
+        images: ["/imgs/p-2.jpg", "/imgs/p-1(1).jpg", "/imgs/p-1(2).jpg"],
+        price: 738.39,
+        offer: 489,
+        link: "https://www.amazon.in/Vishuddh-Herbals-Sunnipindi-Herbal-Nalangu/dp/B0D8ZF1YL3/"
       },
-      cream: {
-        title: "Sandalwood Face Cream",
-        desc: "Brightens your complexion and gives a smooth texture.",
-        ingredients: "Sandalwood, Turmeric, Rose Water",
-        images: ["/imgs/sandalwood.webp", "/imgs/turmeric_pack.webp", "/imgs/rose_water.jpeg"],
-        price: 290,
-        offer: 250
+      hairwashpowder: {
+        title: "Natural Hair Wash Powder Natural Hair Shampoo With Herbal Amla Reetha Shikakai And Methi Powder For Men & Women, Totally Organic | Hair Growth | Reduce Hair Fall & Dandruff",
+        desc: "Vishuddh Herbals Hair wash powder, natural hair cleanser, is a traditional and natural alternative to commercial shampoos. It is often made from a blend of dried herbs like Rita,Amla,Sheekakaya,Methi and other natural ingredients that are known for their cleansing and nourishing properties for the hair and scalp.",
+        ingredients: "kasturi pasupu, Tulasi Leaves,Neem Leaves,Thunga Masta, Vattiverlu,Konda karpuram, Kamala Thokkalu,Rose Petals, Ulavalu, Mudibiyam, Pesalu, Methi, Senagalu",
+        about: "Gentle Cleansing: Vishuddh Baby Herbs is100% NATURAL: Vishuddh Herbals Hair wash powder is 100% pure powder prepared from high quality, Handpicked Reetha nut shells, Shikakai, Methi, and seedless Amla which are shade-dried and processed naturally.NO CHEMICAL, NO PRESERVATIVE: Vishuddh Herbals powder is free from any preservative, chemicals, or added color or fragrance.TRIPLE FILTERED MICROFINE POWDER: Vishuddh Herbals Hair wash powder undergo a triple filtration process to achieve very fine particles which makes it super beneficial for preparing hair wash.NATURAL CLEANSER: Reetha, Amla, Shikakai and Methi has been used for ages to cleanse the hair and scalp naturally without any chemicals. It is effective in cleansing oil from your hair and scalp.",
+        images: ["/imgs/p-6.jpg", "/imgs/p-6(1).jpg", "/imgs/p-6(2).jpg", "/imgs/p-6(3).jpg"],
+        price: 599,
+        offer: 269,
+        link: "https://www.amazon.in/Vishuddh-Herbals-Natural-Shikakai-Dandruff/dp/B0CHN5PPVX/"
       },
-      toothpaste: {
-        title: "Herbal Toothpaste",
-        desc: "Protects gums and teeth naturally with herbal power.",
-        ingredients: "Clove, Neem, Mint",
-        images: ["/imgs/herbal_toothpaste.jpg", "/imgs/neemapowder.webp"],
-        price: 130,
-        offer: 100
+      hennapowder: {
+        title: "Henna Powder Enriched With Natural Herbals For Hair Growth, Colour & Conditioning (500)",
+        desc: "Vishuddh Herbals Hair wash powder, natural hair cleanser, is a traditional and natural alternative to commercial shampoos. It is often made from a blend of dried herbs like Rita,Amla,Sheekakaya,Methi and other natural ingredients that are known for thHenna powder is commonly used as a natural hair dye, imparting a reddish-brown color to the hair. It is a popular choice for those seeking an alternative to chemical hair dyes.",
+        ingredients: "Henna, Amla, Bramhi, Bhringraj, Neem, Hibiscus",
+        about: "Natural Hair Dye: Henna is commonly used as a natural hair dye. It can impart a reddish-brown color to the hair. Many people prefer henna over chemical hair dyes because it is considered safer and free from harmful chemicals.Hair Conditioning: Henna is an excellent conditioner for hair. It can make hair softer, shinier, and more manageable. It helps in reducing frizz and improving hair texture.Scalp Health: Applying henna to the scalp can help in maintaining a healthy scalp. It has cooling properties that can soothe an itchy or irritated scalp. It also helps in maintaining the pH balance of the scalp.",
+        images: ["/imgs/p-7.jpg", "/imgs/p-7(1).jpg", "/imgs/p-7(2).jpg", "/imgs/p-7(3).jpg", "/imgs/p-7(4).jpg", "/imgs/p-7(5).jpg", "/imgs/p-7(6).jpg"],
+        price: 500,
+        offer: 359,
+        link: "https://www.amazon.in/Vishuddh-Herbals-Enriched-Natural-Conditioning/dp/B0CJF2YCS4/"
       },
-      toner: {
-        title: "Rose Water Toner",
-        desc: "Refreshes and tones your skin for a natural glow.",
-        ingredients: "Pure Rose Extracts, Aloe Vera",
-        images: ["/imgs/rose_water.jpeg", "/imgs/aloe-vera.jpg"],
-        price: 160,
-        offer: 130
+      multanimitti: {
+        title: "Natural Multani Mitti Powder For Face Pack, Hair Pack For Soft and Glowing Skin and hair Bentonite Clay - 200g",
+        desc: "Vishuddh Herbals Hair wash powder, natural hair cleanser, is a traditional and natural alternative to commercial shampoos. It is often made from a blend of dried herbs like Rita,Amla,Sheekakaya,Methi and other natural ingredients that are known for thHenna powder is commonly used as a natural hair dye, imparting a reddish-brown color to the hair. It is a popular choice for those seeking an alternative to chemical hair dyes.",
+        ingredients: "Multani Mitti",
+        about: "Natural Hair Dye: Henna is commonly used as a natural hair dye. It can impart a reddish-brown color to the hair. Many people prefer henna over chemical hair dyes because it is considered safer and free from harmful chemicals.Hair Conditioning: Henna is an excellent conditioner for hair. It can make hair softer, shinier, and more manageable. It helps in reducing frizz and improving hair texture.Scalp Health: Applying henna to the scalp can help in maintaining a healthy scalp. It has cooling properties that can soothe an itchy or irritated scalp. It also helps in maintaining the pH balance of the scalp.",
+        images: ["/imgs/p-8.jpg", "/imgs/p-8(1).jpg", "/imgs/p-8(2).jpg", "/imgs/p-8(3).jpg"],
+        price: 299,
+        offer: 199,
+        link: "https://www.amazon.in/Vishuddh-Herbals-Natural-Multani-Bentonite/dp/B0CSXD3JYC/"
       },
-      facepack: {
-        title: "Turmeric Face Pack",
-        desc: "Removes tan and impurities for bright, healthy skin.",
-        ingredients: "Turmeric, Multani Mitti, Sandalwood",
-        images: ["/imgs/turmeric_pack.webp", "/imgs/sandalwood.webp"],
-        price: 230,
-        offer: 190
-      }
     };
 
     const params = new URLSearchParams(window.location.search);
@@ -272,28 +256,44 @@
       const p = products[key];
       document.getElementById("product-title").textContent = p.title;
       document.getElementById("product-description").textContent = p.desc;
-      document.getElementById("product-ingredients").textContent = p.ingredients;
       document.getElementById("original-price").textContent = "₹" + p.price;
       document.getElementById("offer-price").textContent = "₹" + p.offer;
+      document.getElementById("order-link").href = p.link;
+      document.getElementById("product-about").textContent =
+        p.about || "This product is crafted with care using quality natural ingredients.";
 
+      // ✅ Calculate and show discount %
+      const discount = Math.round(((p.price - p.offer) / p.price) * 100);
+      document.getElementById("discount").textContent = `${discount}% OFF`;
+
+      // ✅ Show Ingredients only if present
+      if (p.ingredients) {
+        document.getElementById("ingredients-section").classList.remove("hidden");
+        document.getElementById("product-ingredients").textContent = p.ingredients;
+      }
+
+      // ✅ Load Images
       const mainImg = document.getElementById("main-image");
       mainImg.src = p.images[0];
-
       const preview = document.getElementById("preview-images");
       p.images.forEach((img, i) => {
         const thumb = document.createElement("img");
         thumb.src = img;
-        thumb.className = "w-20 h-20 rounded-xl object-cover cursor-pointer border-2 border-transparent hover:border-green-600 transition";
+        thumb.className =
+          "w-20 h-20 rounded-xl cursor-pointer border-2 border-transparent hover:border-green-600 transition";
         if (i === 0) thumb.classList.add("active-thumb");
         thumb.addEventListener("click", () => {
-          document.querySelectorAll("#preview-images img").forEach(t => t.classList.remove("active-thumb"));
+          document.querySelectorAll("#preview-images img").forEach((t) =>
+            t.classList.remove("active-thumb")
+          );
           thumb.classList.add("active-thumb");
           mainImg.src = img;
         });
         preview.appendChild(thumb);
       });
     } else {
-      document.body.innerHTML = "<div class='text-center mt-40 text-xl text-gray-700'>Product not found.</div>";
+      document.body.innerHTML =
+        "<div class='text-center mt-40 text-xl text-gray-700'>Product not found.</div>";
     }
   </script>
 </body>

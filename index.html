@@ -13,39 +13,55 @@
   <link rel="stylesheet" href="css/style.css" />
 
   <style>
-    /* ✅ Smooth fade + pan animation for hero images */
-    #hero-slider img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-      transition: opacity 1s ease-in-out, transform 8s ease;
-      transform: scale(1);
-    }
+  /* ✅ Hero Slider (Mobile Optimized) */
+#hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100dvh; /* 👈 Use dynamic viewport height (mobile safe) */
+  overflow: hidden;
+}
 
-    #hero-slider img.active {
-      opacity: 1;
-      transform: scale(1.05);
-    }
+#hero-slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 👈 Better fill for varied screen sizes */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
 
-    #hero-slider img.inactive {
-      opacity: 0;
-      transform: scale(1);
-    }
+#hero-slider img.active {
+  opacity: 1;
+  z-index: 2;
+}
 
-    /* Dots smoother style */
-    #dots-container button {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.5);
-      transition: all 0.3s ease;
-    }
+/* Dots */
+#dots-container {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+}
 
-    #dots-container button.active {
-      background-color: white;
-      transform: scale(1.2);
-    }
-  </style>
+#dots-container button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+#dots-container button.active {
+  background-color: white;
+  transform: scale(1.2);
+}
+
+</style>
 </head>
 
 <body class="flex flex-col min-h-screen font-sans">
@@ -265,64 +281,67 @@
     <script src="js/main.js"></script>
 
 <script>
-    const sliderImages = [
-      'imgs/b-1.jpeg',
-      'imgs/b-2.jpeg',
-      'imgs/b-3.jpeg',
-      'imgs/b-4.jpeg'
-    ];
+  const sliderImages = [
+  'imgs/b-1.jpeg',
+  'imgs/b-2.jpeg',
+  'imgs/b-3.jpeg',
+  'imgs/b-4.jpeg'
+];
 
-    let currentIndex = 0;
-    const imageEl = document.getElementById('slider-image');
-    const dotsContainer = document.getElementById('dots-container');
+let currentIndex = 0;
+const heroSlider = document.getElementById('hero-slider');
+const dotsContainer = document.getElementById('dots-container');
 
-    // Create dots dynamically
-    sliderImages.forEach((_, index) => {
-      const dot = document.createElement('button');
-      dot.addEventListener('click', () => {
-        showSlide(index);
-        resetAutoSlide();
-      });
-      dotsContainer.appendChild(dot);
-    });
+// ✅ Create image elements once
+const imageElements = sliderImages.map((src, i) => {
+  const img = document.createElement('img');
+  img.src = src;
+  img.className = i === 0 ? 'active' : '';
+  heroSlider.appendChild(img);
+  return img;
+});
 
-    const dots = dotsContainer.querySelectorAll('button');
+// ✅ Create dots
+sliderImages.forEach((_, i) => {
+  const dot = document.createElement('button');
+  if (i === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => {
+    showSlide(i);
+    resetAutoSlide();
+  });
+  dotsContainer.appendChild(dot);
+});
 
-    function showSlide(index) {
-      currentIndex = index;
+const dots = dotsContainer.querySelectorAll('button');
 
-      // fade + zoom effect (controlled by CSS)
-      imageEl.classList.remove('active');
-      imageEl.classList.add('inactive');
+// ✅ Show slide
+function showSlide(index) {
+  imageElements.forEach((img, i) => {
+    img.classList.toggle('active', i === index);
+  });
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+  currentIndex = index;
+}
 
-      setTimeout(() => {
-        imageEl.src = sliderImages[currentIndex];
-        imageEl.classList.remove('inactive');
-        imageEl.classList.add('active');
-      }, 500);
+// ✅ Auto next
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % sliderImages.length;
+  showSlide(currentIndex);
+}
 
-      updateDots();
-    }
+let slideTimer = setInterval(nextSlide, 4000);
 
-    function updateDots() {
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentIndex);
-      });
-    }
+function resetAutoSlide() {
+  clearInterval(slideTimer);
+  slideTimer = setInterval(nextSlide, 4000);
+}
 
-    let slideTimer = setInterval(nextSlide, 4000);
+// ✅ Initialize
+showSlide(0);
+</script>
 
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % sliderImages.length;
-      showSlide(currentIndex);
-    }
 
-    function resetAutoSlide() {
-      clearInterval(slideTimer);
-      slideTimer = setInterval(nextSlide, 4000);
-    }
-
-    showSlide(0);
-  </script>
 </body>
 </html>
