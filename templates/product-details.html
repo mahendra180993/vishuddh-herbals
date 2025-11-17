@@ -8,163 +8,238 @@
   <link rel="icon" href="../imgs/vh-l.png" type="image/x-icon" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'gradient-shift': 'gradientShift 15s ease infinite',
+          },
+          keyframes: {
+            gradientShift: {
+              '0%': { 'background-position': '0% 50%' },
+              '50%': { 'background-position': '100% 50%' },
+              '100%': { 'background-position': '0% 50%' },
+            }
+          }
+        }
+      }
+    }
+  </script>
   <style>
     .active-thumb {
       border-color: #16a34a !important;
       transform: scale(1.05);
     }
+    .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
   </style>
 </head>
 
-<body class="flex flex-col min-h-screen font-sans bg-green-200">
-<!-- Top Navbar -->
-    <div class="bg-gray-100 text-gray-700 text-sm py-2 px-6 hidden sm:flex items-center">
-        <div class="max-w-6xl mx-auto w-full flex justify-between">
-            <div class="flex items-center space-x-4">
-                <div class="flex items-center gap-1"><i class="fas fa-envelope"></i><span>info@example.com</span></div>
-                <div class="flex items-center gap-1"><i class="fas fa-phone"></i><span>+91 1234567890</span></div>
-            </div>
-            <div class="flex items-center space-x-4">
-                <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
-            </div>
+<body class="flex flex-col min-h-screen font-sans overflow-x-hidden w-full max-w-screen">
+  <!-- Top Navbar -->
+  <div class="relative z-50 bg-gray-100 text-gray-700 text-sm py-2 px-4 sm:px-6 hidden sm:flex items-center w-full overflow-x-hidden">
+    <div class="max-w-6xl mx-auto w-full flex justify-between items-center">
+      <div class="flex items-center space-x-2 sm:space-x-4 flex-wrap">
+        <div class="flex items-center gap-1 text-xs sm:text-sm whitespace-nowrap">
+          <i class="fas fa-envelope"></i>
+          <span class="hidden md:inline">info@example.com</span>
+          <span class="md:hidden">Email</span>
         </div>
+        <div class="flex items-center gap-1 text-xs sm:text-sm whitespace-nowrap">
+          <i class="fas fa-phone"></i>
+          <span>+91 1234567890</span>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
+        <a href="#" class="hover:text-blue-600"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
+      </div>
     </div>
-  <!-- ✅ Navbar -->
-  <nav id="navbar" class="fixed w-full left-0 z-30 top-[32px] bg-green-700 backdrop-blur-sm transition-all duration-300">
-    <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
-      <div><img src="../imgs/vh-w.png" alt="Logo" class="h-10" /></div>
+  </div>
 
-      <ul id="nav-links" class="hidden lg:flex space-x-8 font-semibold text-white">
-        <li><a href="/" class="hover:text-green-400">Home</a></li>
-        <li><a href="about.html" class="hover:text-green-400">About Us</a></li>
-        <li><a href="products.html" class="hover:text-green-400">Products</a></li>
-        <li><a href="reviews.html" class="hover:text-green-400">Reviews</a></li>
-        <li><a href="faq.html" class="hover:text-green-400">FAQ's</a></li>
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed w-full left-0 right-0 z-40 top-0 bg-transparent backdrop-blur-sm transition-all duration-300 overflow-x-hidden sm:top-[32px]">
+    <div class="w-full max-w-6xl mx-auto flex justify-between items-center py-3 sm:py-4 px-4 sm:px-6">
+      <div class="flex-shrink-0">
+        <div class="bg-black border-2 border-black rounded-lg p-1 sm:p-1.5 inline-block">
+          <img id="navbar-logo" src="../imgs/vh-w.png" alt="Logo" class="h-8 sm:h-10 w-auto transition-all duration-300" />
+        </div>
+      </div>
+
+      <ul id="nav-links" class="hidden lg:flex space-x-8 font-semibold">
+        <li><a href="/" class="text-green-800 hover:text-green-600 transition nav-link">Home</a></li>
+        <li><a href="about.html" class="text-green-800 hover:text-green-600 transition nav-link">About Us</a></li>
+        <li><a href="products.html" class="text-green-800 hover:text-green-600 transition nav-link">Products</a></li>
+        <li><a href="reviews.html" class="text-green-800 hover:text-green-600 transition nav-link">Reviews</a></li>
+        <li><a href="faq.html" class="text-green-800 hover:text-green-600 transition nav-link">FAQ's</a></li>
       </ul>
 
-      <div class="flex items-center space-x-4">
+      <div class="flex items-center space-x-2 sm:space-x-4">
         <a href="contact.html"
-           class="hidden lg:inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded transition">
+           class="hidden lg:inline-block bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded transition whitespace-nowrap contact-btn">
           Contact
         </a>
-        <button id="menu-toggle" class="block lg:hidden text-white text-2xl focus:outline-none">
+        <button id="menu-toggle" class="block lg:hidden text-green-800 text-xl sm:text-2xl focus:outline-none menu-toggle-btn transition-colors">
           <i class="fas fa-bars"></i>
         </button>
       </div>
     </div>
+    
+    <!-- Mobile Menu -->
+    <ul id="mobile-menu" class="hidden flex-col items-center bg-green-800 bg-opacity-95 text-white font-semibold space-y-3 py-4 px-4 lg:hidden w-full overflow-x-hidden">
+      <li class="w-full text-center">
+        <a href="/" class="hover:text-green-400 block py-2 border-b border-green-600 transition">Home</a>
+      </li>
+      <li class="w-full text-center">
+        <a href="about.html" class="hover:text-green-400 block py-2 border-b border-green-600 transition">About Us</a>
+      </li>
+      <li class="w-full text-center">
+        <a href="products.html" class="hover:text-green-400 block py-2 border-b border-green-600 transition">Products</a>
+      </li>
+      <li class="w-full text-center">
+        <a href="reviews.html" class="hover:text-green-400 block py-2 border-b border-green-600 transition">Reviews</a>
+      </li>
+      <li class="w-full text-center">
+        <a href="faq.html" class="hover:text-green-400 block py-2 border-b border-green-600 transition">FAQ's</a>
+      </li>
+      <li class="w-full text-center">
+        <a href="contact.html" class="bg-green-500 px-4 py-2 rounded hover:bg-green-600 transition inline-block mt-2">Contact</a>
+      </li>
+    </ul>
   </nav>
 
-  <!-- ✅ Product Details Section -->
-  <section class="flex flex-col md:flex-row items-center justify-center max-w-6xl mx-auto bg-green-200 rounded-2xl shadow-md mt-24 p-6 gap-10">
+  <!-- Background Gradient with Overlay -->
+  <div class="fixed inset-0 z-0 bg-gradient-to-br from-green-50 via-green-100 to-green-200 bg-[length:400%_400%] animate-gradient-shift pointer-events-none"></div>
+  <div class="fixed inset-0 z-0 pointer-events-none">
+    <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_50%,rgba(34,197,94,0.1)_0%,transparent_50%)]"></div>
+    <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_80%_80%,rgba(59,130,246,0.1)_0%,transparent_50%)]"></div>
+    <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_40%_20%,rgba(168,85,247,0.1)_0%,transparent_50%)]"></div>
+  </div>
+
+  <!-- Product Details Section -->
+  <section class="relative z-10 flex flex-col md:flex-row items-center justify-center w-full max-w-6xl mx-auto rounded-3xl mt-16 sm:mt-20 md:mt-24 mb-8 px-4 sm:px-6 md:px-10 py-6 sm:py-8 md:py-10 gap-6 sm:gap-8 md:gap-12 bg-white/95 backdrop-blur-lg shadow-2xl border border-white/50">
     
     <!-- Left: Image Gallery -->
-    <div class="md:w-1/2 flex flex-col items-center justify-center">
-      <img id="main-image" src="" alt="Product" class="rounded-2xl w-full h-[380px] object-contain shadow-md transition-all duration-500">
-      <div id="preview-images" class="flex justify-center gap-3 mt-4 flex-wrap"></div>
+    <div class="w-full md:w-1/2 flex flex-col items-center justify-center">
+      <div class="relative w-full">
+        <img id="main-image" src="" alt="Product" 
+             class="rounded-2xl w-full h-[240px] sm:h-[280px] md:h-[380px] lg:h-[450px] object-contain transition-all duration-500 shadow-xl bg-gradient-to-br from-gray-50 to-gray-100 border-2 sm:border-3 border-green-200" />
+      </div>
+      <div id="preview-images" class="flex justify-center gap-2 sm:gap-3 mt-4 sm:mt-6 flex-wrap max-w-full overflow-x-auto pb-2 scrollbar-hide">
+      </div>
     </div>
 
     <!-- Right: Product Info -->
-    <div class="md:w-1/2 flex flex-col justify-center">
+    <div class="w-full md:w-1/2 flex flex-col justify-center space-y-4">
       <div>
-        <h2 id="product-title" class="text-3xl font-bold text-yellow-500"></h2>
-        <p id="product-description" class="text-gray-700 mt-3"></p>
+        <h2 id="product-title" class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-tight bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent break-words"></h2>
+        <p id="product-description" class="text-gray-700 mt-3 text-sm sm:text-base leading-relaxed break-words"></p>
 
         <!-- Ingredients Section -->
-        <div id="ingredients-section" class="hidden">
-          <h3 class="mt-6 font-semibold text-yellow-500">Key Ingredients</h3>
-          <p id="product-ingredients" class="text-gray-600 mt-1"></p>
+        <div id="ingredients-section" class="hidden mt-6 p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border-l-4 border-green-500">
+          <h3 class="font-semibold text-green-700 text-base sm:text-lg mb-2 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-0.5 after:bg-gradient-to-r after:from-yellow-400 after:to-yellow-600 after:rounded">Key Ingredients</h3>
+          <p id="product-ingredients" class="text-gray-700 mt-1 text-sm sm:text-base break-words"></p>
         </div>
 
         <!-- About Product Section -->
-        <h3 class="mt-6 font-semibold text-yellow-500">About Product</h3>
-        <p id="product-about" class="text-gray-600 mt-1"></p>
+        <div class="mt-6 p-4 bg-gradient-to-r from-amber-50 to-yellow-50 rounded-xl border-l-4 border-yellow-500">
+          <h3 class="font-semibold text-green-700 text-base sm:text-lg mb-2 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-12 after:h-0.5 after:bg-gradient-to-r after:from-yellow-400 after:to-yellow-600 after:rounded">About Product</h3>
+          <p id="product-about" class="text-gray-700 mt-1 text-sm sm:text-base leading-relaxed break-words"></p>
+        </div>
 
-        <!-- ✅ Price Section with Discount -->
-        <div class="mt-6 flex items-center space-x-4">
-          <p id="original-price" class="text-gray-500 line-through text-lg"></p>
-          <p id="offer-price" class="text-green-800 text-2xl font-bold"></p>
-          <span id="discount" class="text-red-600 text-sm font-semibold"></span>
+        <!-- Price Section with Discount -->
+        <div class="mt-6 p-3 sm:p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border-2 border-green-200 flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4">
+          <p id="original-price" class="text-gray-500 line-through text-base sm:text-lg md:text-xl"></p>
+          <p id="offer-price" class="text-green-700 text-2xl sm:text-3xl md:text-4xl font-bold"></p>
+          <span id="discount" class="bg-red-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm md:text-base font-semibold shadow-md"></span>
         </div>
 
         <!-- Place Order -->
-        <div class="mt-8">
+        <div class="mt-6 sm:mt-8">
           <a id="order-link"
             href="#"
             target="_blank"
-            class="bg-yellow-400 hover:bg-green-800 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-md transition inline-block">
-            Place Order
+            class="inline-flex items-center justify-center bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base md:text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 w-full sm:w-auto">
+            <i class="fas fa-shopping-cart mr-2"></i>Place Order Now
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ✅ Footer -->
-  <footer class="bg-gradient-to-b from-gray-900 to-black text-gray-200 py-14 px-6">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 text-center md:text-left">
-
-    <!-- 🌱 Brand Info -->
-    <div>
-      <img src="../imgs/vh-l.png" alt="Vishuddh Herbals Logo" class="h-20 mx-auto md:mx-0 mb-4 rounded-xl shadow-lg">
-      <p class="text-gray-300 leading-relaxed text-sm md:text-base">
-        At <span class="font-semibold text-green-500">Vishuddh Herbals</span>, we believe in the healing power of nature.  
-        Our herbal products are crafted using time-tested Ayurvedic ingredients to nourish your body,  
-        rejuvenate your skin and hair, and bring balance — the way nature intended.
-      </p>
-    </div>
-
-    <!-- ⚡ Quick Links -->
-    <div>
-      <h3 class="text-xl font-semibold text-green-400 mb-4 border-b-2 border-green-500 inline-block pb-1">
-        Quick Links
-      </h3>
-      <ul class="space-y-3">
-        <li><a href="about.html" class="hover:text-green-400 transition">About Us</a></li>
-        <li><a href="products.html" class="hover:text-green-400 transition">Products</a></li>
-        <li><a href="faq.html" class="hover:text-green-400 transition">FAQ's</a></li>
-        <li><a href="contact.html" class="hover:text-green-400 transition">Contact</a></li>
-      </ul>
-    </div>
-
-    <!-- 🌍 Social Media -->
-    <div>
-      <h3 class="text-xl font-semibold text-green-400 mb-4 border-b-2 border-green-500 inline-block pb-1">
-        Follow Us
-      </h3>
-      <div class="flex justify-center md:justify-start space-x-5">
-        <a href="#" class="hover:text-blue-500 transform hover:scale-110 transition duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
-        <a href="#" class="hover:text-pink-500 transform hover:scale-110 transition duration-300"><i class="fab fa-instagram text-xl"></i></a>
-        <a href="#" class="hover:text-sky-400 transform hover:scale-110 transition duration-300"><i class="fab fa-twitter text-xl"></i></a>
-        <a href="#" class="hover:text-red-600 transform hover:scale-110 transition duration-300"><i class="fab fa-youtube text-xl"></i></a>
+  <!-- Footer -->
+  <footer class="relative z-10 bg-gradient-to-b from-gray-900 to-black text-gray-200 py-14 px-4 sm:px-6 mt-8 w-full overflow-x-hidden">
+    <div class="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 text-center md:text-left">
+      <!-- Brand Info -->
+      <div>
+        <img src="../imgs/vh-l.png" alt="Vishuddh Herbals Logo" class="h-20 mx-auto md:mx-0 mb-4 rounded-xl shadow-lg">
+        <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+          At <span class="font-semibold text-green-500">Vishuddh Herbals</span>, we believe in the healing power of nature.  
+          Our herbal products are crafted using time-tested Ayurvedic ingredients to nourish your body,  
+          rejuvenate your skin and hair, and bring balance — the way nature intended.
+        </p>
       </div>
 
-      <!-- Newsletter -->
-      <div class="mt-6">
-        <p class="text-sm text-gray-400 mb-2">Subscribe for updates</p>
-        <div class="flex justify-center md:justify-start">
-          <input type="email" placeholder="Your email"
-            class="px-3 py-2 rounded-l-lg text-sm text-gray-800 focus:outline-none w-44 md:w-52" />
-          <button
-            class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-r-lg text-sm font-semibold transition">
-            Subscribe
-          </button>
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-xl font-semibold text-green-400 mb-4 border-b-2 border-green-500 inline-block pb-1">
+          Quick Links
+        </h3>
+        <ul class="space-y-3">
+          <li><a href="about.html" class="hover:text-green-400 transition">About Us</a></li>
+          <li><a href="products.html" class="hover:text-green-400 transition">Products</a></li>
+          <li><a href="faq.html" class="hover:text-green-400 transition">FAQ's</a></li>
+          <li><a href="contact.html" class="hover:text-green-400 transition">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div>
+        <h3 class="text-xl font-semibold text-green-400 mb-4 border-b-2 border-green-500 inline-block pb-1">
+          Follow Us
+        </h3>
+        <div class="flex justify-center md:justify-start space-x-5">
+          <a href="#" class="hover:text-blue-500 transform hover:scale-110 transition duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
+          <a href="#" class="hover:text-pink-500 transform hover:scale-110 transition duration-300"><i class="fab fa-instagram text-xl"></i></a>
+          <a href="#" class="hover:text-sky-400 transform hover:scale-110 transition duration-300"><i class="fab fa-twitter text-xl"></i></a>
+          <a href="#" class="hover:text-red-600 transform hover:scale-110 transition duration-300"><i class="fab fa-youtube text-xl"></i></a>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="mt-6">
+          <p class="text-sm text-gray-400 mb-2">Subscribe for updates</p>
+          <div class="flex justify-center md:justify-start flex-wrap gap-2">
+            <input type="email" placeholder="Your email"
+              class="px-3 py-2 rounded-l-lg text-sm text-gray-800 focus:outline-none w-44 md:w-52 max-w-full" />
+            <button
+              class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-r-lg text-sm font-semibold transition whitespace-nowrap">
+              Subscribe
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Bottom Line -->
-  <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
-    © 2025 <span class="text-green-400 font-semibold">Vishuddh Herbals</span>. All rights reserved.
-  </div>
-</footer>
-<script src="../js/main.js"></script>
+    <!-- Bottom Line -->
+    <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
+      © 2025 <span class="text-green-400 font-semibold">Vishuddh Herbals</span>. All rights reserved.
+    </div>
+  </footer>
 
-  <!-- ✅ Script -->
+  <script src="../js/main.js"></script>
+
+  <!-- Script -->
   <script>
-    const products = {
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      const products = {
       sunnipindi: {
         title: "Sunnipindi",
         desc: "Sunnipindi Herbal Bath Powder Ubtan Body Scrub Face Pack for women and men - Tan Removal - Ancient Ayurvedic Healing - Enriched with Numerous Herbs (250 gms)",
@@ -185,7 +260,6 @@
         offer: 269,
         link: "https://www.amazon.in/Vishuddh-Herbals-Sunnipindi-Herbal-Nalangu/dp/B0D8ZC7TLJ/"
       },
-
       HerbalShampoo: {
         title: "Natural Neem & Tulasi Aloe Vera Herbal Shampoo | Anti Dandruff, Scalp Cooling | Strengthens Hair Roots | Supports Scalp Health| SLS and Paraben Free |",
         desc: "Vishuddh Herbals Neem Tulasi Shampoo, a premium hair care solution that combines nature's finest ingredients. this shampoo harnesses the beneficial properties of Neem and Tulasi, traditionally known for their hair-strengthening qualities.",
@@ -196,7 +270,6 @@
         offer: 299,
         link: "https://www.amazon.in/dp/B0G1H9XTZY"
       },
-
       hairconditioner: {
         title: "Hair Conditioner Powder for Hair Care, Healthy Scalp, Nourishment, Mask, Helps to Control Dandruff, Hairfall | Natural Cleanser (100)",
         desc: "Pure cotton saree crafted from high-quality mul cotton fabric, offering comfort and breathability perfect for Indian weather",
@@ -217,7 +290,6 @@
         offer: 489,
         link: "https://www.amazon.in/Vishuddh-Herbals-Sunnipindi-Herbal-Nalangu/dp/B0D8ZF1YL3/"
       },
-
       SheekakayaShampoo: {
         title: "Rita Amla and Sheekakaya Shampoo for Hair Growth and Anti Dandruff with Fenigreek and Flaxseeds, Natural Gentle Cleanser for Long Thick Hair, Sulfate Free for Women and Men",
         desc: "Vishuddh Herbals Experience the power of nature with this herbal shampoo that brings together three time-tested Ayurvedic ingredients — Amla (Indian Gooseberry), Reetha (Soapnut) and Shikakai — to give your hair the care it truly deserves.",
@@ -228,7 +300,6 @@
         offer: 299,
         link: "https://www.amazon.in/dp/B0G19YS94V"
       },
-
       hairwashpowder: {
         title: "Natural Hair Wash Powder Natural Hair Shampoo With Herbal Amla Reetha Shikakai And Methi Powder For Men & Women, Totally Organic | Hair Growth | Reduce Hair Fall & Dandruff",
         desc: "Vishuddh Herbals Hair wash powder, natural hair cleanser, is a traditional and natural alternative to commercial shampoos. It is often made from a blend of dried herbs like Rita,Amla,Sheekakaya,Methi and other natural ingredients that are known for their cleansing and nourishing properties for the hair and scalp.",
@@ -261,52 +332,201 @@
       },
     };
 
-    const params = new URLSearchParams(window.location.search);
-    const key = params.get("product");
+      const params = new URLSearchParams(window.location.search);
+      const key = params.get("product");
 
-    if (products[key]) {
-      const p = products[key];
-      document.getElementById("product-title").textContent = p.title;
-      document.getElementById("product-description").textContent = p.desc;
-      document.getElementById("original-price").textContent = "₹" + p.price;
-      document.getElementById("offer-price").textContent = "₹" + p.offer;
-      document.getElementById("order-link").href = p.link;
-      document.getElementById("product-about").textContent =
-        p.about || "This product is crafted with care using quality natural ingredients.";
+      console.log("Product key from URL:", key);
+      console.log("Available products:", Object.keys(products));
 
-      // ✅ Calculate and show discount %
-      const discount = Math.round(((p.price - p.offer) / p.price) * 100);
-      document.getElementById("discount").textContent = `${discount}% OFF`;
+      if (products[key]) {
+        const p = products[key];
+        console.log("Loading product:", p.title);
+        
+        // Update product information
+        const titleEl = document.getElementById("product-title");
+        const descEl = document.getElementById("product-description");
+        const origPriceEl = document.getElementById("original-price");
+        const offerPriceEl = document.getElementById("offer-price");
+        const orderLinkEl = document.getElementById("order-link");
+        const aboutEl = document.getElementById("product-about");
 
-      // ✅ Show Ingredients only if present
-      if (p.ingredients) {
-        document.getElementById("ingredients-section").classList.remove("hidden");
-        document.getElementById("product-ingredients").textContent = p.ingredients;
+        if (titleEl) titleEl.textContent = p.title;
+        if (descEl) descEl.textContent = p.desc;
+        if (origPriceEl) origPriceEl.textContent = "₹" + p.price;
+        if (offerPriceEl) offerPriceEl.textContent = "₹" + p.offer;
+        if (orderLinkEl) orderLinkEl.href = p.link;
+        if (aboutEl) aboutEl.textContent = p.about || "This product is crafted with care using quality natural ingredients.";
+
+        // Calculate and show discount %
+        const discount = Math.round(((p.price - p.offer) / p.price) * 100);
+        const discountEl = document.getElementById("discount");
+        if (discountEl) discountEl.textContent = `${discount}% OFF`;
+
+        // Show Ingredients only if present
+        if (p.ingredients) {
+          const ingredientsSection = document.getElementById("ingredients-section");
+          const ingredientsEl = document.getElementById("product-ingredients");
+          if (ingredientsSection) ingredientsSection.classList.remove("hidden");
+          if (ingredientsEl) ingredientsEl.textContent = p.ingredients;
+        }
+
+        // Load Images
+        const mainImg = document.getElementById("main-image");
+        const preview = document.getElementById("preview-images");
+        
+        if (mainImg && p.images && p.images.length > 0) {
+          // Fix image paths - use relative path from templates folder
+          const firstImage = p.images[0].startsWith('/') ? '..' + p.images[0] : p.images[0];
+          mainImg.src = firstImage;
+          mainImg.onerror = function() {
+            console.error("Failed to load image:", firstImage);
+            // Try absolute path
+            mainImg.src = p.images[0];
+          };
+        }
+
+        if (preview && p.images) {
+          preview.innerHTML = ""; // Clear existing thumbnails
+          p.images.forEach((img, i) => {
+            const thumb = document.createElement("img");
+            // Fix image paths - use relative path from templates folder
+            const imgPath = img.startsWith('/') ? '..' + img : img;
+            thumb.src = imgPath;
+            thumb.alt = `${p.title} - Image ${i + 1}`;
+            thumb.className =
+              "w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-xl cursor-pointer border-2 border-transparent hover:border-green-600 transition-all duration-300 object-cover shadow-md hover:shadow-lg hover:-translate-y-1 flex-shrink-0";
+            if (i === 0) thumb.classList.add("active-thumb");
+            
+            thumb.onerror = function() {
+              console.error("Failed to load thumbnail:", imgPath);
+              // Try absolute path
+              thumb.src = img;
+            };
+            
+            thumb.addEventListener("click", () => {
+              document.querySelectorAll("#preview-images img").forEach((t) =>
+                t.classList.remove("active-thumb")
+              );
+              thumb.classList.add("active-thumb");
+              if (mainImg) {
+                const clickedImgPath = img.startsWith('/') ? '..' + img : img;
+                mainImg.src = clickedImgPath;
+                mainImg.onerror = function() {
+                  mainImg.src = img;
+                };
+              }
+            });
+            preview.appendChild(thumb);
+          });
+        }
+      } else {
+        console.error("Product not found for key:", key);
+        const productSection = document.querySelector('section');
+        if (productSection) {
+          productSection.innerHTML = 
+            "<div class='text-center py-20 text-xl text-gray-700'>Product not found. <a href='products.html' class='text-green-600 hover:underline'>Go back to products</a></div>";
+        }
       }
 
-      // ✅ Load Images
-      const mainImg = document.getElementById("main-image");
-      mainImg.src = p.images[0];
-      const preview = document.getElementById("preview-images");
-      p.images.forEach((img, i) => {
-        const thumb = document.createElement("img");
-        thumb.src = img;
-        thumb.className =
-          "w-20 h-20 rounded-xl cursor-pointer border-2 border-transparent hover:border-green-600 transition";
-        if (i === 0) thumb.classList.add("active-thumb");
-        thumb.addEventListener("click", () => {
-          document.querySelectorAll("#preview-images img").forEach((t) =>
-            t.classList.remove("active-thumb")
-          );
-          thumb.classList.add("active-thumb");
-          mainImg.src = img;
+      // Mobile menu toggle
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
         });
-        preview.appendChild(thumb);
-      });
-    } else {
-      document.body.innerHTML =
-        "<div class='text-center mt-40 text-xl text-gray-700'>Product not found.</div>";
-    }
+      }
+
+      // Navbar scroll effect - handle background and text color
+      const navbar = document.getElementById('navbar');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const navbarLogo = document.getElementById('navbar-logo');
+      const contactBtn = document.querySelector('.contact-btn');
+      const menuToggleBtn = document.querySelector('.menu-toggle-btn');
+      
+      if (navbar) {
+        function handleNavbarScroll() {
+          // Check if we're on mobile (screen width < 640px)
+          const isMobile = window.innerWidth < 640;
+          
+          if (window.scrollY > 50) {
+            // Scrolled - solid background with white text
+            navbar.classList.remove('bg-transparent');
+            navbar.classList.add('bg-green-700', 'shadow-lg');
+            
+            // Always keep navbar at top-0 on mobile, top-0 on desktop when scrolled
+            if (!isMobile) {
+              navbar.style.top = '0px';
+            } else {
+              navbar.style.top = '0px';
+            }
+            
+            // Change logo to white version
+            if (navbarLogo) {
+              navbarLogo.src = '../imgs/vh-w.png';
+            }
+            
+            // Change nav links to white
+            navLinks.forEach(link => {
+              link.classList.remove('text-green-800', 'hover:text-green-600');
+              link.classList.add('text-white', 'hover:text-green-300');
+            });
+            
+            // Update contact button
+            if (contactBtn) {
+              contactBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
+              contactBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+            }
+            
+            // Update menu toggle
+            if (menuToggleBtn) {
+              menuToggleBtn.classList.remove('text-green-800');
+              menuToggleBtn.classList.add('text-white');
+            }
+          } else {
+            // At top - transparent background with dark text
+            navbar.classList.remove('bg-green-700', 'shadow-lg');
+            navbar.classList.add('bg-transparent');
+            
+            // On mobile always top-0, on desktop top-[32px] when at top
+            if (!isMobile) {
+              navbar.style.top = '32px';
+            } else {
+              navbar.style.top = '0px';
+            }
+            
+            // Change logo to white version (for visibility on light background)
+            if (navbarLogo) {
+              navbarLogo.src = '../imgs/vh-w.png';
+            }
+            
+            // Change nav links to dark green
+            navLinks.forEach(link => {
+              link.classList.remove('text-white', 'hover:text-green-300');
+              link.classList.add('text-green-800', 'hover:text-green-600');
+            });
+            
+            // Update contact button
+            if (contactBtn) {
+              contactBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
+              contactBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+            }
+            
+            // Update menu toggle
+            if (menuToggleBtn) {
+              menuToggleBtn.classList.remove('text-white');
+              menuToggleBtn.classList.add('text-green-800');
+            }
+          }
+        }
+        
+        // Run on load, scroll, and resize
+        handleNavbarScroll();
+        window.addEventListener('scroll', handleNavbarScroll);
+        window.addEventListener('resize', handleNavbarScroll);
+      }
+    });
   </script>
 </body>
 </html>
